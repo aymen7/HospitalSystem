@@ -1,3 +1,11 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Bennour Aymen
+ * Date: 03/11/2017
+ * Time: 19:28
+ */
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -12,23 +20,24 @@
     <meta name="keywords" content="HTML,CSS,JavaScript,JQuery,Php,Ajax,responsive design,bootstrap,photoshop,web,developer">
     <meta name="author" content="Aymen Bennour ,Yassine Hamza Cherif">
     <!-- jqueru Ui-->
-    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
-    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.theme.css">
+    <link rel="stylesheet" href="../../jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" href="../../jquery-ui-1.12.1.custom/jquery-ui.theme.css">
     <!-- Bootstrap -->
-    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- normalize css-->
-    <link href="css/normalize.css" rel="stylesheet">
+    <link href="../../css/normalize.css" rel="stylesheet">
     <!-- font awesome -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <!-- creative buttons -->
-    <link rel="stylesheet" href="CreativeButtons/css/component.css">
+    <link rel="stylesheet" href="../../CreativeButtons/css/component.css">
+
     <!-- my style css-->
-    <link rel="stylesheet" href="css/index.css" >
+    <link rel="stylesheet" href="../../css/profile.css" >
     <!-- font links -->
     <!-- jquery script-->
-    <script src="js_files/jquery-3.1.1.js"></script>
+    <script src="../../js_files/jquery-3.1.1.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif:700" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Khula:400" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,20 +48,23 @@
 </head>
 <!----------------------------- the body tag--------------------------------------->
 <body>
-<?php require 'views/loginViews/login-form.php';?>
-
+<?php  require 'profileHeader.php';?>
+<section class="container-fluid" id="main-content">
+    <?php  require 'profileSideBar.php';?>
+    <?php  require 'profileMain.php';?>
+</section>
 
 <!-- js scripts ------------------------------>
 
 <!-- jquery script-->
-<script src="js_files/jquery-3.1.1.js"></script>
+<script src="../../js_files/jquery-3.1.1.js"></script>
 <!-- jquery ui script-->
-<script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script src="../../jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 
 <!-- bootstrap script-->
-<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 <!-- my js script-->
-<script src="js_files/index.js"></script>
+<script src="../../js_files/profile.js"></script>
 
 </body><!-- end of the body tag -------------->
 </html><!-- end of the document-->
