@@ -5,116 +5,33 @@
  * Date: 01/11/2017
  * Time: 23:43
  */
+namespace app\models;
 
-class Infirmier
+class Infirmier extends User
 {
-    private $idUser;
-    private $username;
-    private $password;
-    private $nom;
-    private $prenom;
-    private $numTel;
+    private $idSpecialite;
     private $specialite;
+    private $idGrade;
     private $grade;
 
     /**
      * @return mixed
      */
-    public function getIdUser()
+    public function getIdSpecialite()
     {
-        return $this->idUser;
-    }
-
-    /**
-     * @param mixed $idUser
-     */
-    public function setIdUser($idUser)
-    {
-        $this->idUser = $idUser;
+        return $this->idSpecialite;
     }
 
     /**
      * @return mixed
      */
-    public function getUsername()
+    public function getIdGrade()
     {
-        return $this->username;
+        return $this->idGrade;
     }
 
     /**
-     * @param mixed $username
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    /**
-     * @param mixed $nom
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
-
-    /**
-     * @param mixed $prenom
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNumTel()
-    {
-        return $this->numTel;
-    }
-
-    /**
-     * @param mixed $numTel
-     */
-    public function setNumTel($numTel)
-    {
-        $this->numTel = $numTel;
-    }
-
-    /**
-     * @return mixed
+     * @return Specialite
      */
     public function getSpecialite()
     {
@@ -122,7 +39,7 @@ class Infirmier
     }
 
     /**
-     * @param mixed $specialite
+     * @param Specialite $specialite
      */
     public function setSpecialite($specialite)
     {
@@ -130,7 +47,7 @@ class Infirmier
     }
 
     /**
-     * @return mixed
+     * @return Grade
      */
     public function getGrade()
     {
@@ -138,12 +55,11 @@ class Infirmier
     }
 
     /**
-     * @param mixed $grade
+     * @param Grade $grade
      */
     public function setGrade($grade)
     {
         $this->grade = $grade;
     }
-
 
 }

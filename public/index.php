@@ -40,12 +40,12 @@
 <!----------------------------- the body tag--------------------------------------->
 <body>
 <?php
-
+session_start();
 require_once '../app/start.php';
-$app = new App();
-
+require_once '../app/Autoloader.php';
+\app\Autoloader::register();
+$app = new \app\core\App();
 ?>
-
 <!-- js scripts ------------------------------>
 
 <!-- jquery script-->

@@ -5,6 +5,7 @@
  * Date: 02/11/2017
  * Time: 14:58
  */
+namespace app\table;
 
 class InfirmierTable extends Table
 {

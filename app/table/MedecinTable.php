@@ -5,7 +5,8 @@
  * Date: 02/11/2017
  * Time: 14:58
  */
-
+namespace app\table;
+use app\models\Medecin;
 class MedecinTable extends Table
 {
     /**
@@ -24,11 +25,15 @@ class MedecinTable extends Table
      */
     private function fillObject(Medecin $medecin)
     {
-        $specialiteTable = new SpecialiteTable($this->db);
-        $medecin->setSpecialite($specialiteTable->findById($medecin->getIdSpecialite()));
+        if (!is_null($medecin->getIdSpecialite())) {
+            $specialiteTable = new SpecialiteTable($this->db);
+            $medecin->setSpecialite($specialiteTable->findById($medecin->getIdSpecialite()));
+        }
 
-        $gradeTable = new GradeTable($this->db);
-        $medecin->setGrade($gradeTable->findById($medecin->getIdGrade()));
+        if (!is_null($medecin->getIdGrade())) {
+            $gradeTable = new GradeTable($this->db);
+            $medecin->setGrade($gradeTable->findById($medecin->getIdGrade()));
+        }
 
         return $medecin;
     }
@@ -110,9 +115,23 @@ class MedecinTable extends Table
         $this->db->prepare($req, $param);
     }
 
+    /**
+     * @param $id int
+     */
     public function delete($id)
     {
         $this->db->prepare("DELETE FROM user WHERE idUser = ?", array($id));
+    }
+
+    /**
+     * @param $username String
+     * @return Medecin|false
+     */
+    public function connect($username) {
+        $medecin = $this->db->prepare("SELECT * FROM user WHERE username = ? AND poste = 'M'", array($username), Medecin::class);
+        if ($medecin instanceof Medecin)
+            $medecin = $this->fillObject($medecin);
+        return $medecin;
     }
 
 }

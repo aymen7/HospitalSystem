@@ -7,4 +7,5 @@
 
 header('Location: public/');
 
+
 die();

@@ -5,7 +5,8 @@
  * Date: 02/11/2017
  * Time: 16:10
  */
-
+namespace app\table;
+use app\models\Grade;
 class GradeTable extends Table
 {
     /**

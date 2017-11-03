@@ -5,6 +5,7 @@
  * Date: 01/11/2017
  * Time: 23:41
  */
+namespace app\models;
 
 class Grade
 {

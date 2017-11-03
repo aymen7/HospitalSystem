@@ -7,6 +7,7 @@
  * and calls the chosen controller and method after splitting the URL.
  *
  */
+namespace app\core;
 
 use Whoops\Run as WhoopsRun;
 use Whoops\Handler\PrettyPageHandler as WhoopsPrettyPageHandler;

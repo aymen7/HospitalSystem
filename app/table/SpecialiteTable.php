@@ -5,7 +5,8 @@
  * Date: 02/11/2017
  * Time: 15:58
  */
-
+namespace app\table;
+use app\models\Specialite;
 class SpecialiteTable extends Table
 {
     /**

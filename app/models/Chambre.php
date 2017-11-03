@@ -5,7 +5,7 @@
  * Date: 01/11/2017
  * Time: 23:29
  */
-
+namespace app\models;
 class Chambre
 {
     private $idChambre;

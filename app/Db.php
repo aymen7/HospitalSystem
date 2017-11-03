@@ -5,11 +5,9 @@
  * Date: 21/03/2017
  * Time: 22:19
  */
-
 namespace app;
-
-use MongoDB\BSON\ObjectID;
 use PDO;
+
 class Db
 {
     private $db_name;
@@ -26,7 +24,7 @@ class Db
      * @param String $db_host String Database localhost
      */
 
-    function __construct($db_name, $db_user = 'root', $db_pass = '', $db_host = 'localhost') {
+    function __construct($db_name = 'chu', $db_user = 'root', $db_pass = '', $db_host = 'localhost') {
         $this->db_name = $db_name;
         $this->db_user = $db_user;
         $this->db_pass = $db_pass;
@@ -40,9 +38,13 @@ class Db
     private function getPDO() {
         if (!isset($this->pdo))
         {
-            $dsn = 'mysql:dbname=' . $this->db_name . ';host=' . $this->db_host;
-            $this->pdo = new PDO($dsn, $this->db_user, $this->db_pass);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
+            try {
+                $dsn = 'mysql:dbname=' . $this->db_name . ';host=' . $this->db_host;
+                $this->pdo = new PDO($dsn, $this->db_user, $this->db_pass);
+                $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+            } catch (\Exception $exception){
+                $exception->getMessage();
+            }
         }
         return $this->pdo;
     }

@@ -5,6 +5,7 @@
  * Date: 01/11/2017
  * Time: 23:53
  */
+namespace app\models;
 
 class Specialite
 {

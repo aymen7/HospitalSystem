@@ -5,7 +5,7 @@
  * Date: 02/11/2017
  * Time: 14:59
  */
-
+namespace app\table;
 abstract class Table
 {
     protected $db;

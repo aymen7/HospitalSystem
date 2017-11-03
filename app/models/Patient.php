@@ -5,6 +5,7 @@
  * Date: 01/11/2017
  * Time: 23:50
  */
+namespace app\models;
 
 class Patient
 {
