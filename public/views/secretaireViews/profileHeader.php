@@ -21,8 +21,7 @@
                     <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Log out</a>
-
+                    <a class="dropdown-item" href="logout.php">Log out</a>
                 </div>
             </div>
         </div>

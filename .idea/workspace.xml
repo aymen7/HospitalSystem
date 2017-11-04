@@ -2,32 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bf69037-d846-4665-8cbf-bc050b5b56aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/login.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/secretaire.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/loginViews/login-form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/secretaireViews/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/secretaireViews/profileHeader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/secretaireViews/profileMain.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/secretaireViews/profileSideBar.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/database.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/start.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/auth/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/home/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/css/global.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/logout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/secretaireViews/medecinsTable.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Auth.php" afterPath="$PROJECT_DIR$/app/controllers/Auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Home.php" afterPath="$PROJECT_DIR$/app/controllers/Home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Medecin.php" afterPath="$PROJECT_DIR$/app/models/Medecin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/User.php" afterPath="$PROJECT_DIR$/app/models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/table/UserTable.php" afterPath="$PROJECT_DIR$/app/table/UserTable.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/public/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/index.css" afterPath="$PROJECT_DIR$/public/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/normalize.css" afterPath="$PROJECT_DIR$/public/css/normalize.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/public/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js_files/index.js" afterPath="$PROJECT_DIR$/public/js_files/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js_files/jquery-3.1.1.js" afterPath="$PROJECT_DIR$/public/js_files/jquery-3.1.1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Db.php" afterPath="$PROJECT_DIR$/app/Db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/table/MedecinTable.php" afterPath="$PROJECT_DIR$/app/table/MedecinTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/secretaireViews/index.php" afterPath="$PROJECT_DIR$/public/views/secretaireViews/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/secretaireViews/profileHeader.php" afterPath="$PROJECT_DIR$/public/views/secretaireViews/profileHeader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/views/secretaireViews/profileMain.php" afterPath="$PROJECT_DIR$/public/views/secretaireViews/profileMain.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,28 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Auth.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Auth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="676">
-              <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,13 +35,11 @@
         <option value="$PROJECT_DIR$/app/database.php" />
         <option value="$PROJECT_DIR$/app/Config.php" />
         <option value="$PROJECT_DIR$/app/table/Table.php" />
-        <option value="$PROJECT_DIR$/app/Db.php" />
         <option value="$PROJECT_DIR$/app/table/InfirmierTable.php" />
         <option value="$PROJECT_DIR$/app/models/Specialite.php" />
         <option value="$PROJECT_DIR$/app/models/Grade.php" />
         <option value="$PROJECT_DIR$/app/table/GradeTable.php" />
         <option value="$PROJECT_DIR$/app/table/SpecialiteTable.php" />
-        <option value="$PROJECT_DIR$/app/table/MedecinTable.php" />
         <option value="$PROJECT_DIR$/app/table/SecretaireTable.php" />
         <option value="$PROJECT_DIR$/app/models/Chambre.php" />
         <option value="$PROJECT_DIR$/app/models/Consultation.php" />
@@ -105,13 +64,18 @@
         <option value="$PROJECT_DIR$/app/views/auth/index.php" />
         <option value="$PROJECT_DIR$/app/views/home/secretaire.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/public/views/secretaireViews/index.php" />
         <option value="$PROJECT_DIR$/public/secretaire.php" />
         <option value="$PROJECT_DIR$/public/views/loginViews/login-form.php" />
         <option value="$PROJECT_DIR$/public/login.php" />
-        <option value="$PROJECT_DIR$/public/views/secretaireViews/profileMain.php" />
-        <option value="$PROJECT_DIR$/public/css/profile.css" />
         <option value="$PROJECT_DIR$/public/js_files/profile.js" />
+        <option value="$PROJECT_DIR$/public/logout.php" />
+        <option value="$PROJECT_DIR$/public/views/secretaireViews/profileHeader.php" />
+        <option value="$PROJECT_DIR$/public/views/secretaireViews/profileMain.php" />
+        <option value="$PROJECT_DIR$/public/views/secretaireViews/medecinsTable.php" />
+        <option value="$PROJECT_DIR$/app/table/MedecinTable.php" />
+        <option value="$PROJECT_DIR$/app/Db.php" />
+        <option value="$PROJECT_DIR$/public/css/profile.css" />
+        <option value="$PROJECT_DIR$/public/views/secretaireViews/index.php" />
       </list>
     </option>
   </component>
@@ -168,7 +132,7 @@
               <item name="HospitalSystem" type="b2602c69:ProjectViewProjectNode" />
               <item name="HospitalSystem" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -213,12 +177,12 @@
       <workItem from="1509653100282" duration="8102000" />
       <workItem from="1509662063999" duration="11371000" />
       <workItem from="1509727270607" duration="17790000" />
-      <workItem from="1509795326267" duration="4752000" />
+      <workItem from="1509795326267" duration="10082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42161000" />
+    <option name="totallyTimeSpent" value="47491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
@@ -272,20 +236,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../pfe/statique/Dynamic/app/Autoloader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../pfe/statique/Dynamic/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -306,13 +256,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="84" column="16" lean-forward="true" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -349,13 +292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/table/MedecinTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -473,16 +409,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Medecin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="62" column="1" lean-forward="false" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
-          <folding>
-            <element signature="e#111#126#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/secretaireViews/profile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="604">
@@ -565,58 +491,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/secretaireViews/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/secretaire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/secretaireViews/profileHeader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="49" lean-forward="false" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/secretaireViews/profileMain.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="114" column="53" lean-forward="true" selection-start-line="114" selection-start-column="53" selection-end-line="114" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -637,18 +515,125 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Auth.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/Home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="450">
+          <caret line="30" column="51" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Home.php">
+    <entry file="file://$PROJECT_DIR$/public/views/secretaireViews/profileHeader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state relative-caret-position="306">
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="43" column="69" lean-forward="false" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="168" column="37" lean-forward="false" selection-start-line="168" selection-start-column="37" selection-end-line="168" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Medecin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="60" column="34" lean-forward="false" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/secretaireViews/medecinsTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="38" lean-forward="true" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding>
+            <marker date="1509823972047" expanded="true" signature="765:836" ph="..." />
+            <marker date="1509823972047" expanded="true" signature="765:882" ph="..." />
+            <marker date="1509823972047" expanded="true" signature="765:909" ph="..." />
+            <marker date="1509823972047" expanded="true" signature="765:931" ph="..." />
+            <marker date="1509823972047" expanded="true" signature="765:958" ph="..." />
+            <marker date="1509823972047" expanded="true" signature="765:980" ph="..." />
+            <marker date="1509823972047" expanded="true" signature="765:1028" ph="..." />
+            <marker date="1509823972047" expanded="true" signature="765:1050" ph="..." />
+            <marker date="1509823972047" expanded="true" signature="765:1088" ph="..." />
+            <marker date="1509823972047" expanded="true" signature="765:1110" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/table/MedecinTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <marker date="1509824142420" expanded="true" signature="309:360" ph="SELECT * FRO... user" />
+            <marker date="1509824142420" expanded="true" signature="1268:1345" ph="SELECT * FRO... user" />
+            <marker date="1509824142420" expanded="true" signature="1646:1698" ph="SELECT * FRO... user" />
+            <marker date="1509824142420" expanded="true" signature="2662:2768" ph="INSERT INTO user... " />
+            <marker date="1509824142420" expanded="true" signature="3491:3645" ph="UPDATE user " />
+            <marker date="1509824142420" expanded="true" signature="3801:3834" ph="DELETE FROM " />
+            <marker date="1509824142420" expanded="true" signature="4013:4066" ph="SELECT * FRO... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/secretaireViews/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/secretaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/secretaireViews/profileMain.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="54" column="37" lean-forward="false" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/logout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/Auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
           <folding />
         </state>
       </provider>
