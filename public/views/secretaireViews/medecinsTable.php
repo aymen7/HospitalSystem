@@ -14,7 +14,7 @@ $previous = ($start > 5) ? $start - 5 : 0;
     <table class="table table-responsive" id="doctors-table">
         <thead>
         <tr>
-            <th>Id</th>
+            <th class="hidden">Id</th>
             <th>Nom</th>
             <th>Prenom</th>
             <th>telephone </th>
@@ -29,7 +29,7 @@ $previous = ($start > 5) ? $start - 5 : 0;
              * @var $medecin \app\models\Medecin
              */
             echo "<tr>
-                <td>{$medecin->getIdUser()}</td>
+                <td class='hidden'>{$medecin->getIdUser()}</td>
                 <td>{$medecin->getNom()}</td>
                 <td>{$medecin->getPrenom()}</td>
                 <td>{$medecin->getNumTel()}</td>
