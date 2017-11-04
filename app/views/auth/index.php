@@ -15,11 +15,11 @@
         <!-- login form -->
         <form action="?url=auth/login" method="post" class="form-horizontal" id="login-form">
             <div class="form-group">
-                <input type="text" placeholder="username" class="form-control" name="username" required>
+                <input type="text" placeholder="username" class="form-control" name="username">
                 <span id="user-span" class="icon-span"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
             </div>
             <div class="form-group">
-                <input type="password" placeholder="password" class="form-control" name="password" required>
+                <input type="password" placeholder="password" class="form-control" name="password">
                 <span id="pass-span" class="icon-span"><i class="fa fa-lock fa-2x" aria-hidden="true"></i></span>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Log In</button>

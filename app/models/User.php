@@ -13,7 +13,6 @@ class User
     protected $nom;
     protected $prenom;
     protected $numTel;
-    protected $poste;
 
     /**
      * @return mixed
@@ -112,23 +111,6 @@ class User
     }
 
     /**
-     * @return mixed
-     */
-    public function getPoste()
-    {
-        return $this->poste;
-    }
-
-    /**
-     * @param mixed $poste
-     */
-    public function setPoste($poste)
-    {
-        $this->poste = $poste;
-    }
-
-
-    /**
      * Check if username and password is valid
      * @param $username
      * @param $password
@@ -146,7 +128,7 @@ class User
             return false;
 
         if ($password == $user->getPassword()){
-            $_SESSION['user'] = serialize($user);
+            $_SESSION['user'] = $user;
             return true;
         }
 

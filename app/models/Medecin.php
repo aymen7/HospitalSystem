@@ -6,7 +6,6 @@
  * Time: 23:47
  */
 namespace app\models;
-use app\Config;
 use app\table\MedecinTable;
 
 class Medecin extends User
@@ -62,11 +61,6 @@ class Medecin extends User
     public function setGrade($grade)
     {
         $this->grade = $grade;
-    }
-
-    public static function getAll($size = null, $ofsset = null){
-        $medecinTable = new MedecinTable(Config::getInstance()->getDatabase());
-        return $medecinTable->getAll($size, $ofsset);
     }
 
 
