@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/HospitalSystem.iml" filepath="$PROJECT_DIR$/.idea/HospitalSystem.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/mvc.iml" filepath="$PROJECT_DIR$/.idea/mvc.iml" />
+      <module fileurl="file://C:\xampp\htdocs\HospitalSystem\HospitalSystem\.idea\HospitalSystem.iml" filepath="C:\xampp\htdocs\HospitalSystem\HospitalSystem\.idea\HospitalSystem.iml" />
+      <module fileurl="file://C:\xampp\htdocs\HospitalSystem\HospitalSystem\.idea\mvc.iml" filepath="C:\xampp\htdocs\HospitalSystem\HospitalSystem\.idea\mvc.iml" />
     </modules>
   </component>
 </project>

@@ -11,11 +11,11 @@ $medecins = \app\models\Medecin::getAll(5, $start);
 $next = $start + 5;
 $previous = ($start > 5) ? $start - 5 : 0;
 ?>
-<div class="col-lg-6 doctors-control" id="table-wrapper">
+<div class="col-lg-7" id="table-wrapper">
     <table class="table table-responsive" id="doctors-table">
         <thead>
         <tr>
-            <th>Id</th>
+            <th class="hidden">Id</th>
             <th>Nom</th>
             <th>Prenom</th>
             <th>telephone </th>
@@ -30,7 +30,7 @@ $previous = ($start > 5) ? $start - 5 : 0;
              * @var $medecin \app\models\Medecin
              */
             echo "<tr>
-                <td>{$medecin->getIdUser()}</td>
+                <td class='hidden'>{$medecin->getIdUser()}</td>
                 <td>{$medecin->getNom()}</td>
                 <td>{$medecin->getPrenom()}</td>
                 <td>{$medecin->getNumTel()}</td>
