@@ -29,7 +29,7 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <!-- creative buttons -->
-    <link rel="stylesheet" href="../../CreativeButtons/css/component.css">
+    <!--link rel="stylesheet" href="../../CreativeButtons/css/component.css"-->
 
     <!-- my style css-->
     <link rel="stylesheet" href="../../css/profile.css" >

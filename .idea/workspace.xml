@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="963f2428-0da6-465c-b9d8-7536824825e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/profile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js_files/profile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/profileViews/profile.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/profileViews/profileHeader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/profileViews/profileMain.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/profileViews/profileSideBar.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/views/login-form.php" afterPath="$PROJECT_DIR$/views/loginViews/login-form.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js_files/creativeButtons.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/profile.css" afterPath="$PROJECT_DIR$/css/profile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/profileViews/profile.php" afterPath="$PROJECT_DIR$/views/profileViews/profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/profileViews/profileMain.php" afterPath="$PROJECT_DIR$/views/profileViews/profileMain.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,13 +27,25 @@
       <file leaf-file-name="profileMain.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/profileViews/profileMain.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="23" column="49" lean-forward="true" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+            <state relative-caret-position="290">
+              <caret line="120" column="77" lean-forward="false" selection-start-line="120" selection-start-column="77" selection-end-line="120" selection-end-column="77" />
               <folding>
                 <element signature="e#6#86#0#PHP" expanded="true" />
-                <element signature="n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#thead#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#tr#4;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#3;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -47,8 +54,8 @@
       <file leaf-file-name="profile.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/profile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="70" column="17" lean-forward="false" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+            <state relative-caret-position="323">
+              <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
               <folding>
                 <element signature="e#563#684#0" expanded="false" />
                 <element signature="e#766#850#0" expanded="false" />
@@ -63,7 +70,14 @@
                 <element signature="e#1999#2055#0" expanded="false" />
                 <element signature="e#2107#2150#0" expanded="false" />
                 <element signature="e#2256#2290#0" expanded="false" />
+                <element signature="e#2300#2419#0" expanded="false" />
+                <element signature="e#2448#2475#0" expanded="false" />
+                <element signature="e#2502#2689#0" expanded="false" />
                 <element signature="e#2708#2744#0" expanded="false" />
+                <element signature="e#2764#2814#0" expanded="false" />
+                <element signature="e#2835#2881#0" expanded="false" />
+                <element signature="e#2901#2947#0" expanded="false" />
+                <element signature="e#2967#3014#0" expanded="false" />
                 <element signature="e#3036#3064#0" expanded="false" />
                 <element signature="e#3078#3110#0" expanded="false" />
                 <element signature="e#3125#3152#0" expanded="false" />
@@ -71,18 +85,15 @@
                 <element signature="e#3218#3225#0" expanded="false" />
                 <element signature="e#3237#3291#0" expanded="false" />
                 <element signature="e#3303#3338#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profileSideBar.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/profileViews/profileSideBar.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-              <folding>
-                <element signature="e#6#86#0#PHP" expanded="true" />
+                <element signature="e#3381#3415#0" expanded="false" />
+                <element signature="e#3434#3466#0" expanded="false" />
+                <element signature="e#3510#3543#0" expanded="false" />
+                <element signature="e#3563#3571#0" expanded="false" />
+                <element signature="e#3982#4011#0" expanded="false" />
+                <element signature="e#4025#4067#0" expanded="false" />
+                <element signature="e#4081#4131#0" expanded="false" />
+                <element signature="e#4147#4189#0" expanded="false" />
+                <element signature="e#4204#4253#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -93,10 +104,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>btn-7</find>
+      <find>btn-7b</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,9 +128,10 @@
         <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/views/profileViews/profileHeader.php" />
         <option value="$PROJECT_DIR$/views/profileViews/profile-sideBar.php" />
+        <option value="$PROJECT_DIR$/views/profileViews/profileSideBar.php" />
+        <option value="$PROJECT_DIR$/js_files/creativeButtons.js" />
         <option value="$PROJECT_DIR$/views/profileViews/profile.php" />
         <option value="$PROJECT_DIR$/css/profile.css" />
-        <option value="$PROJECT_DIR$/views/profileViews/profileSideBar.php" />
         <option value="$PROJECT_DIR$/views/profileViews/profileMain.php" />
       </list>
     </option>
@@ -149,8 +167,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -205,7 +223,21 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="js_files" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HospitalSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HospitalSystem" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CreativeButtons" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,14 +353,16 @@
       <workItem from="1509627608220" duration="7264000" />
       <workItem from="1509657417062" duration="161000" />
       <workItem from="1509733155859" duration="12692000" />
+      <workItem from="1509791840373" duration="9396000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24768000" />
+    <option name="totallyTimeSpent" value="34164000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -360,13 +394,91 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/loginViews/login-form.php">
+    <entry file="file://$PROJECT_DIR$/views/profileViews/profileMain.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#6#86#0#PHP" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#thead#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#4;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1610">
+          <caret line="70" column="17" lean-forward="false" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+          <folding>
+            <element signature="e#563#684#0" expanded="false" />
+            <element signature="e#766#850#0" expanded="false" />
+            <element signature="e#877#926#0" expanded="false" />
+            <element signature="e#951#1040#0" expanded="false" />
+            <element signature="e#1091#1157#0" expanded="false" />
+            <element signature="e#1198#1545#0" expanded="false" />
+            <element signature="e#1599#1684#0" expanded="false" />
+            <element signature="e#1726#1769#0" expanded="false" />
+            <element signature="e#1796#1845#0" expanded="false" />
+            <element signature="e#1895#1951#0" expanded="false" />
+            <element signature="e#1999#2055#0" expanded="false" />
+            <element signature="e#2107#2150#0" expanded="false" />
+            <element signature="e#2256#2290#0" expanded="false" />
+            <element signature="e#2300#2419#0" expanded="false" />
+            <element signature="e#2448#2475#0" expanded="false" />
+            <element signature="e#2502#2689#0" expanded="false" />
+            <element signature="e#2708#2744#0" expanded="false" />
+            <element signature="e#2764#2814#0" expanded="false" />
+            <element signature="e#2835#2881#0" expanded="false" />
+            <element signature="e#2901#2947#0" expanded="false" />
+            <element signature="e#2967#3014#0" expanded="false" />
+            <element signature="e#3036#3064#0" expanded="false" />
+            <element signature="e#3078#3110#0" expanded="false" />
+            <element signature="e#3125#3152#0" expanded="false" />
+            <element signature="e#3172#3203#0" expanded="false" />
+            <element signature="e#3218#3225#0" expanded="false" />
+            <element signature="e#3237#3291#0" expanded="false" />
+            <element signature="e#3303#3338#0" expanded="false" />
+            <element signature="e#3381#3415#0" expanded="false" />
+            <element signature="e#3434#3466#0" expanded="false" />
+            <element signature="e#3510#3543#0" expanded="false" />
+            <element signature="e#3563#3571#0" expanded="false" />
+            <element signature="e#3982#4011#0" expanded="false" />
+            <element signature="e#4025#4067#0" expanded="false" />
+            <element signature="e#4081#4131#0" expanded="false" />
+            <element signature="e#4147#4189#0" expanded="false" />
+            <element signature="e#4204#4253#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/profileViews/profileSideBar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
             <element signature="e#6#86#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/loginViews/login-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -397,9 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="25" column="51" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -438,9 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -479,9 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -520,9 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -561,9 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="45" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="45" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -591,20 +688,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js_files/index.js" />
-    <entry file="file://$PROJECT_DIR$/CreativeButtons/css/component.css" />
-    <entry file="file://$PROJECT_DIR$/CreativeButtons/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js_files/profile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -620,9 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -631,19 +715,8 @@
         <state relative-caret-position="345">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#6#86#0#PHP" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#header#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#header#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#header#0;n#!!top" expanded="false" />
+            <element signature="e#6#86#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/profileViews/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -670,10 +743,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/profileViews/profileSideBar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="e#6#86#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CreativeButtons/css/component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="1011" column="1" lean-forward="true" selection-start-line="1011" selection-start-column="1" selection-end-line="1011" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CreativeButtons/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="173" column="38" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="174" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js_files/creativeButtons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+            <element signature="e#72#1734#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/profileViews/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/profile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="70" column="17" lean-forward="false" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+        <state relative-caret-position="323">
+          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
           <folding>
             <element signature="e#563#684#0" expanded="false" />
             <element signature="e#766#850#0" expanded="false" />
@@ -688,7 +806,14 @@
             <element signature="e#1999#2055#0" expanded="false" />
             <element signature="e#2107#2150#0" expanded="false" />
             <element signature="e#2256#2290#0" expanded="false" />
+            <element signature="e#2300#2419#0" expanded="false" />
+            <element signature="e#2448#2475#0" expanded="false" />
+            <element signature="e#2502#2689#0" expanded="false" />
             <element signature="e#2708#2744#0" expanded="false" />
+            <element signature="e#2764#2814#0" expanded="false" />
+            <element signature="e#2835#2881#0" expanded="false" />
+            <element signature="e#2901#2947#0" expanded="false" />
+            <element signature="e#2967#3014#0" expanded="false" />
             <element signature="e#3036#3064#0" expanded="false" />
             <element signature="e#3078#3110#0" expanded="false" />
             <element signature="e#3125#3152#0" expanded="false" />
@@ -696,29 +821,40 @@
             <element signature="e#3218#3225#0" expanded="false" />
             <element signature="e#3237#3291#0" expanded="false" />
             <element signature="e#3303#3338#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/profileViews/profileSideBar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="true" />
+            <element signature="e#3381#3415#0" expanded="false" />
+            <element signature="e#3434#3466#0" expanded="false" />
+            <element signature="e#3510#3543#0" expanded="false" />
+            <element signature="e#3563#3571#0" expanded="false" />
+            <element signature="e#3982#4011#0" expanded="false" />
+            <element signature="e#4025#4067#0" expanded="false" />
+            <element signature="e#4081#4131#0" expanded="false" />
+            <element signature="e#4147#4189#0" expanded="false" />
+            <element signature="e#4204#4253#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/profileViews/profileMain.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="23" column="49" lean-forward="true" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+        <state relative-caret-position="290">
+          <caret line="120" column="77" lean-forward="false" selection-start-line="120" selection-start-column="77" selection-end-line="120" selection-end-column="77" />
           <folding>
             <element signature="e#6#86#0#PHP" expanded="true" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#thead#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#2;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#3;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#tr#4;n#tbody#0;n#table#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#3;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
