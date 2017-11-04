@@ -6,15 +6,14 @@
  * Time: 23:47
  */
 namespace app\models;
+use app\Config;
 use app\table\MedecinTable;
-
 class Medecin extends User
 {
     private $idSpecialite;
     private $specialite;
     private $idGrade;
     private $grade;
-
     /**
      * @return mixed
      */
@@ -22,7 +21,6 @@ class Medecin extends User
     {
         return $this->idSpecialite;
     }
-
     /**
      * @return mixed
      */
@@ -30,7 +28,6 @@ class Medecin extends User
     {
         return $this->idGrade;
     }
-
     /**
      * @return Specialite
      */
@@ -38,7 +35,6 @@ class Medecin extends User
     {
         return $this->specialite;
     }
-
     /**
      * @param Specialite $specialite
      */
@@ -46,7 +42,6 @@ class Medecin extends User
     {
         $this->specialite = $specialite;
     }
-
     /**
      * @return Grade
      */
@@ -54,7 +49,6 @@ class Medecin extends User
     {
         return $this->grade;
     }
-
     /**
      * @param Grade $grade
      */
@@ -62,6 +56,8 @@ class Medecin extends User
     {
         $this->grade = $grade;
     }
-
-
+    public static function getAll($size = null, $ofsset = null){
+        $medecinTable = new MedecinTable(Config::getInstance()->getDatabase());
+        return $medecinTable->getAll($size, $ofsset);
+    }
 }

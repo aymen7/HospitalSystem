@@ -1,0 +1,169 @@
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    body{
+        font-family: 'Khula', sans-serif;
+        background-color: rgba(241,241,241,.9);
+    }
+    /*---- header ------------------------------------------*/
+    header{
+        color: rgba(255,255,255,1);
+        background: #2856B6;
+    }
+    #search-wraper{
+        margin-top: 20px;
+    }
+    #search-span{
+        position: relative;
+        top:5px;
+        right: -78%;
+    }
+    #search-wraper #search-span .fa-search{
+        font-size: 26px;
+        color: #fff;
+
+    }
+    #search-wraper .form-control{
+        width: 80%;
+        margin-right: 0;
+        margin-left: 0;
+        display: inline;
+        border-radius: 0 !important;
+        border-style: none;
+        background-color: rgba(255,255,255,.3) !important;
+        color: white;
+    }
+    #search-wraper .form-control::placeholder{
+        color: white;
+        opacity: .8 !important;
+    }
+    #logOut-wraper .dropdown .btn{
+        padding: 0;
+    }
+    #logOut-wraper{
+        margin-top: 10px;
+    }
+    #logOut-wraper .dropdown .btn:visited{
+        color: white !important;
+    }
+    #logOut-wraper .dropdown .btn:hover{
+        color: white !important;
+    }
+    #logOut-wraper .dropdown .dropdown-menu{
+        left: 28px;
+    }
+    /*------------main content*-------------------------------*/
+    /*-----main div ----*/
+    #main-div{
+        padding-top: 50px;
+    }
+    .stat{
+        border-radius: 5px;
+        padding: 15px 0px 15px 0px;
+        color: white;
+        margin-right: 1%;
+    }
+    #stats-wrapper .col-lg-3{
+        width: 23%;
+    }
+    #stats-wrapper .shadow{
+        -moz-box-shadow:    3px 3px 3px 1px rgba(0,0,0,.3);
+        -webkit-box-shadow: 3px 3px 3px 1px rgba(0,0,0,.3);
+        box-shadow:         3px 3px 3px 1px rgba(0,0,0,.3);
+    }
+    #main-div .row{
+        margin-bottom: 20px;
+    }
+    #first-stat-div{
+        background-color: rgb(50,199,135);
+    }
+    #second-stat-div{
+        background-color: rgb(255,86,82);
+    }
+    #third-stat-div{
+        background-color: rgb(255,193,7);
+    }
+    #forth-stat-div{
+        background-color: rgb(213,89,234);
+    }
+    #title-wrapper h5{
+        opacity: .8;
+    }
+    .stat div{
+        display: inline;
+    }
+    .stat-text{
+        width: 70%;
+    }
+    .stat-text span{
+        display: block;
+    }
+    .stat-font{
+    }
+    .legend{
+        font-size: small;
+        opacity: .8;
+    }
+    .number{
+        font-size: x-large;
+    }
+    /*----------------*/
+    #main-wrapper{
+        padding-top: 40px;
+    }
+    #table-wrapper{
+        padding-left: 0;
+    }
+    #table-wrapper .table-responsive .table{
+        margin-bottom: 0;
+    }
+    #table-wrapper .table tr:hover{
+        cursor: pointer;
+    }
+    .selectedRow{
+        border: solid thin #2856B6;
+    }
+    #table-controls{
+
+    }
+    #table-controls .control-btn-wrapper {
+        display: inline;
+        width: 10%;
+        margin-right: 5%;
+    }
+    #table-controls .control-btn-wrapper:first-child{
+        margin-right: 20%;
+    }
+    #table-controls .control-btn-wrapper:last-child{
+        margin-left: 20%;
+    }
+
+    .control-btn-wrapper .control-btn{
+        border-radius: 80%;
+        padding: 10px;
+    }
+    .control-btn .fa{
+        color: white;
+    }
+    .chev-btn{
+        background-color: #2856B6;
+    }
+    .plus-btn{
+        background-color: rgb(50,199,135);
+    }
+    .pencil-btn{
+        background-color: #78909C;
+    }
+    .trash-btn{
+        background-color: rgb(255,86,82);
+    }
+
+
+
+
+
+}/*end of the laptop desktop design*/

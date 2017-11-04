@@ -1,10 +1,7 @@
 <?php
-
 namespace app\models;
-
 use app\Config;
 use app\table\UserTable;
-
 class User
 {
     protected $idUser;
@@ -13,7 +10,7 @@ class User
     protected $nom;
     protected $prenom;
     protected $numTel;
-
+    protected $poste;
     /**
      * @return mixed
      */
@@ -21,7 +18,6 @@ class User
     {
         return $this->idUser;
     }
-
     /**
      * @param mixed $idUser
      */
@@ -29,7 +25,6 @@ class User
     {
         $this->idUser = $idUser;
     }
-
     /**
      * @return mixed
      */
@@ -37,7 +32,6 @@ class User
     {
         return $this->username;
     }
-
     /**
      * @param mixed $username
      */
@@ -45,7 +39,6 @@ class User
     {
         $this->username = $username;
     }
-
     /**
      * @return mixed
      */
@@ -53,7 +46,6 @@ class User
     {
         return $this->password;
     }
-
     /**
      * @param mixed $password
      */
@@ -61,7 +53,6 @@ class User
     {
         $this->password = $password;
     }
-
     /**
      * @return mixed
      */
@@ -69,7 +60,6 @@ class User
     {
         return $this->nom;
     }
-
     /**
      * @param mixed $nom
      */
@@ -77,7 +67,6 @@ class User
     {
         $this->nom = $nom;
     }
-
     /**
      * @return mixed
      */
@@ -85,7 +74,6 @@ class User
     {
         return $this->prenom;
     }
-
     /**
      * @param mixed $prenom
      */
@@ -93,7 +81,6 @@ class User
     {
         $this->prenom = $prenom;
     }
-
     /**
      * @return mixed
      */
@@ -101,7 +88,6 @@ class User
     {
         return $this->numTel;
     }
-
     /**
      * @param mixed $numTel
      */
@@ -109,7 +95,20 @@ class User
     {
         $this->numTel = $numTel;
     }
-
+    /**
+     * @return mixed
+     */
+    public function getPoste()
+    {
+        return $this->poste;
+    }
+    /**
+     * @param mixed $poste
+     */
+    public function setPoste($poste)
+    {
+        $this->poste = $poste;
+    }
     /**
      * Check if username and password is valid
      * @param $username
@@ -120,18 +119,13 @@ class User
     {
         if (!isset($username) || !isset($password))
             return false;
-
         $userTable = new UserTable(Config::getInstance()->getDatabase());
         $user = $userTable->getUser($username);
-
         if (is_null($user))
             return false;
-
         if ($password == $user->getPassword()){
-            $_SESSION['user'] = $user;
+            $_SESSION['user'] = serialize($user);
             return true;
         }
-
     }
-
 }
