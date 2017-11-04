@@ -26,13 +26,13 @@ class UserTable extends Table
         $user = $this->db->prepare("SELECT * FROM user WHERE username = ?", array($username), User::class, true);
         if (!$user instanceof User)
             return null;
-        if ($user->poste == 'S') {
+        if ($user->getPoste() == 'S') {
             $secretaireTable = new SecretaireTable(Config::getInstance()->getDatabase());
             return $secretaireTable->findById($user->getIdUser());
-        } else if ($user->poste == 'M') {
+        } else if ($user->getPoste() == 'M') {
             $medecinTable = new MedecinTable(Config::getInstance()->getDatabase());
             return $medecinTable->findById($user->getIdUser());
-        } else if ($user->poste == 'I') {
+        } else if ($user->getPoste() == 'I') {
             $infirmierTable = new InfirmierTable(Config::getInstance()->getDatabase());
             return $infirmierTable->findById($user);
         }

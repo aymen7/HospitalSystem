@@ -60,9 +60,14 @@ class MedecinTable extends Table
     /**
      * @return array
      */
-    public function getAll()
+    public function getAll($size = null, $offset = null)
     {
-        $medecins = $this->db->query("SELECT * FROM user WHERE poste = 'M'", Medecin::class);
+        $req = "SELECT * FROM user WHERE poste = 'M' ORDER BY idUser";
+        if (!is_null($size) && is_null($offset))
+            $req .= " LIMIT " . $size;
+        else if (!is_null($offset) && !is_null($size))
+            $req .= " LIMIT " . $offset . ", " . $size;
+        $medecins = $this->db->query($req, Medecin::class);
         $tab = [];
         foreach ($medecins as $medecin) {
             $tab[] = $this->fillObject($medecin);
