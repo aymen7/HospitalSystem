@@ -7,6 +7,9 @@
  */
 namespace app\models;
 
+use app\Config;
+use app\table\PatientTable;
+
 class Patient
 {
     private $idPatient;
@@ -113,5 +116,9 @@ class Patient
     }
 
 
+    public static function getAll(){
+        $patientTable = new PatientTable(Config::getInstance()->getDatabase());
+        return $patientTable->getAll();
+    }
 
 }

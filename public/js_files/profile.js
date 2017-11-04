@@ -33,7 +33,18 @@ $(document).ready(function () {
     selectRow(docTab);
     /*-------------------------------------------------------------*/
 
+    /*-----------previous and next page ajax function-------------*/
 
+    $(document).on('click', '.previousPage, .nextPage', function (event) {
+        event.preventDefault();
+        url = $(this).attr("href");
+        $.ajax(url).done(function (data) {
+            $('.doctors-control').replaceWith(data);
+        })
+        
+    })
+
+    /*-----------------------------------------------------------*/
 
 
 

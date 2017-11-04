@@ -14,7 +14,7 @@
     <div id="stats-wrapper" class="row">
         <div class="stat shadow col-lg-3 " id="first-stat-div">
             <div class="stat-text col-lg-9">
-                <span class="number">1559,65</span>
+                <span class="number"><?= count(\app\models\Patient::getAll()) ?></span>
                 <span class="legend">number of patients</span>
             </div>
             <div class="stat-font col-lg-3">
@@ -23,7 +23,7 @@
         </div>
         <div class="stat shadow col-lg-3  " id="second-stat-div">
             <div class="stat-text col-lg-9">
-                <span class="number">1559,65</span>
+                <span class="number"><?= count(\app\models\Medecin::getAll()) ?></span>
                 <span class="legend">number of doctors</span>
             </div>
             <div class="stat-font col-lg-3">
@@ -52,7 +52,7 @@
 
     </div>
     <div id="main-wrapper" class="row">
-        <?php require 'medecinsTable.php';?>
+        <?php require 'doctorsTable.php';?>
         <div class="col-lg-6"></div>
 
     </div>
