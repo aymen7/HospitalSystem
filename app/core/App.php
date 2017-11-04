@@ -38,7 +38,7 @@ class App
         // Get broken up URL
         $url = $this->parseUrl();
         // Error Handler Init
-        $this->initWhoopsErrorHandler();
+        //$this->initWhoopsErrorHandler();
 
         // Does the requested controller exist?
         // If so, set it and unset from URL array
@@ -74,7 +74,7 @@ class App
      *
      * @return $this
      */    
-    public function initWhoopsErrorHandler()
+    /*public function initWhoopsErrorHandler()
     {
         $whoops = new WhoopsRun();
         $handler = new WhoopsPrettyPageHandler();
@@ -82,7 +82,7 @@ class App
         $whoops->pushHandler($handler)->register();
 
         return $this;
-    }
+    }*/
 
 
     /**
