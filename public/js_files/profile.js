@@ -40,7 +40,7 @@ $(document).ready(function () {
         url = $(this).attr("href");
         $.ajax(url).done(function (data) {
             $('.doctors-control').replaceWith(data);
-        })
+        });
         
     })
 
