@@ -121,6 +121,12 @@
     #table-wrapper .table-responsive .table{
         margin-bottom: 0;
     }
+    #table-wrapper .table tr:hover{
+        cursor: pointer;
+    }
+    .selectedRow{
+        border: solid thin #2856B6;
+    }
     #table-controls{
 
     }
@@ -128,7 +134,6 @@
         display: inline;
         width: 10%;
         margin-right: 5%;
-
     }
     #table-controls .control-btn-wrapper:first-child{
         margin-right: 20%;

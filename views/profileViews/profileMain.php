@@ -53,10 +53,9 @@
     </div>
     <div id="main-wrapper" class="row">
         <div class="col-lg-6" id="table-wrapper">
-            <table class="table table-responsive">
+            <table class="table table-responsive" id="doctors-table">
                 <thead>
                 <tr>
-                    <th></th>
                     <th>Id</th>
                     <th>Prenom</th>
                     <th>Nom</th>
@@ -67,7 +66,6 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td><input type="checkbox"></td>
                     <td>Id1</td>
                     <td>Prenom1</td>  
                     <td>Nom1</td>  
@@ -76,7 +74,6 @@
                     <td>Grade1</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox"></td>
                     <td>Id2</td>
                     <td>Prenom2</td>  
                     <td>Nom2</td>  
@@ -85,7 +82,6 @@
                     <td>Grade2</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox"></td>
                     <td>Id3</td>
                     <td>Prenom3</td>
                     <td>Nom3</td>
@@ -94,7 +90,6 @@
                     <td>Grade3</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox"></td>
                     <td>Id4</td>
                     <td>Prenom4</td>
                     <td>Nom4</td>
@@ -103,7 +98,6 @@
                     <td>Grade4</td>
                 </tr>
                 <tr>
-                    <td><input type="checkbox"></td>
                     <td>Id5</td>
                     <td>Prenom5</td>
                     <td>Nom5</td>
@@ -121,10 +115,10 @@
                         <button class="control-btn btn btn-default plus-btn" ><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
                     </div>
                     <div class="control-btn-wrapper">
-                        <button class="control-btn btn btn-default pencil-btn"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></button>
+                        <button class="control-btn btn btn-default pencil-btn" disabled><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></button>
                     </div>
                     <div class="control-btn-wrapper">
-                        <button class="control-btn btn btn-default trash-btn"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                        <button class="control-btn btn btn-default trash-btn" disabled><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
                     </div>
                     <div class="control-btn-wrapper">
                         <button class="control-btn btn btn-default chev-btn"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
