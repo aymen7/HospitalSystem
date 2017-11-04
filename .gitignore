@@ -1,7 +1,6 @@
 vendor
 .idea
 .idea/workspace.xml
-.idea/modules.xml
 .vagrant
 Vagrantfile
 /app/cache
