@@ -127,6 +127,8 @@
     }
     .selectedRow{
         border: solid thin #2856B6;
+        background: #666;
+        color: #FFF;
     }
     #table-controls{
 
