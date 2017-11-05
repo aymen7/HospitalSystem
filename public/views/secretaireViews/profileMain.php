@@ -32,7 +32,7 @@
         </div>
         <div class="stat shadow col-lg-3 " id="third-stat-div">
             <div class="stat-text col-lg-9">
-                <span class="number">1559,65</span>
+                <span class="number">0</span>
                 <span class="legend">number of rooms</span>
             </div>
             <div class="stat-font col-lg-3">
@@ -41,7 +41,7 @@
         </div>
         <div class="stat shadow col-lg-3 " id="forth-stat-div">
             <div class="stat-text col-lg-9">
-                <span class="number">1559,65</span>
+                <span class="number">0</span>
                 <span class="legend">number of beds</span>
             </div>
             <div class="stat-font col-lg-3">

@@ -45,6 +45,9 @@ $(document).ready(function () {
             //loop all the rows
            allRows.each(function () {
                if($(this).hasClass("selectedRow")){
+                   var id = $(this).children(":first-child").text();
+                   var query = '?do=delete&id=' + id;
+                   sendAjaxQuery(query);
                    //delete the row that has the 'selectedRow' class
                    $(this).remove();
                    //delete the class from the row
@@ -75,13 +78,14 @@ $(document).ready(function () {
     function editUser(table) {
         var allRows=$("table tbody tr "),
             editBtn=$('.pencil-btn');
+        var rowTd;
         editBtn.click(function () {
             //loop all row
             allRows.each(function () {
                 //test if the current row is selected
                 if($(this).hasClass("selectedRow")){
                     //make array of the row's tds
-                 var rowTd=$(this).children('td');
+                    rowTd=$(this).children('td');
                  rowTd.each(function () {
                      //make all the td editablble
                      $(this).attr("contentEditable","true");
@@ -97,6 +101,9 @@ $(document).ready(function () {
         });//click
         //confirm click
         $('.confirm-btn').click(function () {
+            var query = '?do=update&id='+rowTd[0].innerText+'&nom='+rowTd[1].innerText+'&prenom='+rowTd[2].innerText
+                +'&numTel='+rowTd[3].innerText+'&specialite='+rowTd[4].innerText+'&grade='+rowTd[5].innerText;
+            sendAjaxQuery(query);
             //hide the confirm btn
             $(this).addClass("hidden");
             //show the edit btn
@@ -139,9 +146,21 @@ $(document).ready(function () {
         url = $(this).attr("href");
         $.ajax(url).done(function (data) {
             $('.doctors-control').replaceWith(data);
+            selectRow(docTab);
+            deleteUser(docTab);
+            editUser(docTab);
         });
         
     })
+
+    /*-----------------------------------------------------------*/
+    /*---------------------send ajax query-----------------------*/
+    function sendAjaxQuery(query){
+        $.ajax(query).done(function (data) {
+            console.log(data);
+        });
+    }
+
 
     /*-----------------------------------------------------------*/
 
