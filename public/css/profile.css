@@ -13,6 +13,9 @@
     header{
         color: rgba(255,255,255,1);
         background: #2856B6;
+        -moz-box-shadow:    3px 3px 3px 1px rgba(0,0,0,.3);
+        -webkit-box-shadow: 3px 3px 3px 1px rgba(0,0,0,.3);
+        box-shadow:         3px 3px 3px 1px rgba(0,0,0,.3);
     }
     #search-wraper{
         margin-top: 20px;
@@ -55,7 +58,7 @@
         color: white !important;
     }
     #logOut-wraper .dropdown .dropdown-menu{
-        left: 28px;
+        left: 0px;
     }
     /*------------main content*-------------------------------*/
     /*-----main div ----*/

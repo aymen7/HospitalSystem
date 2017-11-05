@@ -6,7 +6,7 @@
  * Time: 19:34
  */
 ?>
-<header class="container-fluid">
+<header class="container-fluid ">
     <div class="container">
         <div class="col-lg-3" id="brand-wraper">
             <h1>Hospital Me</h1>
