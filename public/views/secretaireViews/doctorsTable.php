@@ -11,25 +11,27 @@ $medecins = \app\models\Medecin::getAll(5, $start);
 $next = $start + 5;
 $previous = ($start > 5) ? $start - 5 : 0;
 ?>
-<div class=" doctors-control" id="table-wrapper">
-    <table class="table table-responsive" id="doctors-table">
-        <thead>
-        <tr>
-            <th class="hidden">Id</th>
-            <th>Nom</th>
-            <th>Prenom</th>
-            <th>telephone </th>
-            <th>spécialité</th>
-            <th>Grade</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php
-        foreach ($medecins as $medecin){
-            /**
-             * @var $medecin \app\models\Medecin
-             */
-            echo "<tr>
+<div class=" doctors-control " id="table-wrapper">
+    <div class="table-users">
+        <div class="header">Doctors</div>
+        <table class="table table-responsive" id="doctors-table" cellspacing="0">
+            <thead>
+            <tr>
+                <th class="hidden">Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>telephone </th>
+                <th>spécialité</th>
+                <th>Grade</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach ($medecins as $medecin){
+                /**
+                 * @var $medecin \app\models\Medecin
+                 */
+                echo "<tr>
                 <td class='hidden'>{$medecin->getIdUser()}</td>
                 <td>{$medecin->getNom()}</td>
                 <td>{$medecin->getPrenom()}</td>
@@ -37,10 +39,13 @@ $previous = ($start > 5) ? $start - 5 : 0;
                 <td>{$medecin->getSpecialite()->getSpecialite()}</td>
                 <td>{$medecin->getGrade()->getGrade()}</td>
                 </tr>";
-        }
-        ?>
-        </tbody>
-    </table>
+            }
+            ?>
+            </tbody>
+        </table>
+
+    </div>
+
     <div id="table-controls">
         <div class="control-btn-wrapper">
             <a href="?ajax=doctorsTable&start=<?=$previous?>" class="control-btn btn btn-default chev-btn previousPage"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></a>
