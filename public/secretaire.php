@@ -15,6 +15,19 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
         require 'views/secretaireViews/doctorsTable.php';
         die();
     }
+    if (isset($_GET['do']) && $_GET['do'] == 'delete' && isset($_GET['id'])){
+        $id = $_GET['id'];
+        \app\models\Medecin::delete($id);
+        die();
+    } elseif (isset($_GET['do']) && $_GET['do'] == 'update' && isset($_GET['id']) && isset($_GET['nom'])
+        && isset($_GET['prenom']) && isset($_GET['numTel'])){
+        $medecin = \app\models\Medecin::find($_GET['id']);
+        $medecin->setNom($_GET['nom']);
+        $medecin->setPrenom($_GET['prenom']);
+        $medecin->setNumTel($_GET['numTel']);
+        $medecin->update();
+        die();
+    }
     require 'views/secretaireViews/index.php';
 } else {
     header('Location: index.php');

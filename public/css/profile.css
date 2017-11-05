@@ -43,9 +43,10 @@
     }
     #logOut-wraper .dropdown .btn{
         padding: 0;
+        background: transparent;
     }
     #logOut-wraper{
-        margin-top: 10px;
+        margin-top: 20px;
     }
     #logOut-wraper .dropdown .btn:visited{
         color: white !important;
@@ -126,6 +127,8 @@
     }
     .selectedRow{
         border: solid thin #2856B6;
+        background: #666;
+        color: #FFF;
     }
     #table-controls{
 
@@ -143,8 +146,17 @@
     }
 
     .control-btn-wrapper .control-btn{
-        border-radius: 80%;
+        border-radius: 0;
         padding: 10px;
+        border: transparent;
+        -webkit-transition: all 500ms;
+        -moz-transition: all 500ms;
+        -ms-transition: all 500ms;
+        -o-transition: all 500ms;
+        transition: all 500ms;
+    }
+    .control-btn-wrapper .control-btn:hover{
+        background-color: #555;
     }
     .control-btn .fa{
         color: white;
@@ -156,13 +168,13 @@
         background-color: #2856B6;
     }
     .plus-btn{
-        background-color: rgb(50,199,135);
+        background-color: #43a047;
     }
     .pencil-btn{
         background-color: #78909C;
     }
     .trash-btn{
-        background-color: rgb(255,86,82);
+        background-color: #e53935;
     }
     .confirm-btn{
         background-color: #ffe;

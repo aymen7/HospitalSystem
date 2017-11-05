@@ -60,4 +60,29 @@ class Medecin extends User
         $medecinTable = new MedecinTable(Config::getInstance()->getDatabase());
         return $medecinTable->getAll($size, $ofsset);
     }
+
+    /**
+     * @param $id int
+     */
+    public static function delete($id){
+        $medecinTable = new MedecinTable(Config::getInstance()->getDatabase());
+        $medecinTable->delete($id);
+    }
+
+    /**
+     * @param $id int
+     * @return Medecin
+     */
+    public static function find($id){
+        $medecinTable = new MedecinTable(Config::getInstance()->getDatabase());
+        return $medecinTable->findById($id);
+    }
+
+    /**
+     *
+     */
+    public function update(){
+        $medecinTable = new MedecinTable(Config::getInstance()->getDatabase());
+        $medecinTable->update($this);
+    }
 }

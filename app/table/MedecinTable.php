@@ -111,7 +111,8 @@ class MedecinTable extends Table
             ':idGrade' => $medecin->getGrade()->getIdGrade()
         );
 
-        $req = "UPDATE user SET nom = :nom, prenom = :prenom, numTel = :numTel, idSpecialite = :idSpecialite, idGarde = :idGarde
+        $req = "UPDATE user SET username = :username, password = :password, nom = :nom, prenom = :prenom, 
+                numTel = :numTel, idSpecialite = :idSpecialite, idGrade = :idGrade
                 WHERE idUser = :idMedecin";
         $this->db->prepare($req, $param);
     }
