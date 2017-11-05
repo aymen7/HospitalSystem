@@ -53,7 +53,7 @@
     </div>
     <div id="main-wrapper" class="row">
         <?php require 'doctorsTable.php';?>
-        <div class="col-lg-6"></div>
+
 
     </div>
 

@@ -2,7 +2,24 @@
  * Created by user on 03/11/2017.
  */
 $(document).ready(function () {
+    /*------------------------nice scroll----------------------------*/
+    $(function() {
+        $("aside").niceScroll({cursorcolor:"rgba(40,86,182,.7)"});
+    });
+    /*-------------------------------------------------------------*/
+   /*---------------------------aside setting-----------------------*/
+   function hideShowMenu(btn,menu) {
+       btn.click(function () {
+           menu.slideToggle();
+       });
+   }
 
+   hideShowMenu($('#item-header1'),$('#item-body1'));
+   hideShowMenu($('#item-header2'),$('#item-body2'));
+   hideShowMenu($('#item-header3'),$('#item-body3'));
+   hideShowMenu($('#item-header4'),$('#item-body4'));
+
+/*------------------------------------------------------------------*/
     //get the doctors table
     var docTab=$("#doctors-table");
     /*------------------------selected row -------------------------*/

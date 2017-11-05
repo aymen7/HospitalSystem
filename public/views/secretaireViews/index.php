@@ -63,6 +63,7 @@
 
 <!-- bootstrap script-->
 <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="js_files/jquery.nicescroll.js"></script>
 <!-- my js script-->
 <script src="js_files/profile.js"></script>
 
