@@ -149,6 +149,9 @@
     .control-btn .fa{
         color: white;
     }
+    .control-btn .fa-check{
+        color: rgb(50,199,135);
+    }
     .chev-btn{
         background-color: #2856B6;
     }
@@ -161,6 +164,10 @@
     .trash-btn{
         background-color: rgb(255,86,82);
     }
+    .confirm-btn{
+        background-color: #ffe;
+    }
+
 
 
 

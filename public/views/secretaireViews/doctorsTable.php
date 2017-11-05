@@ -49,11 +49,15 @@ $previous = ($start > 5) ? $start - 5 : 0;
             <button class="control-btn btn btn-default plus-btn" ><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
         </div>
         <div class="control-btn-wrapper">
-            <button class="control-btn btn btn-default pencil-btn" disabled><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></button>
+            <button class="control-btn btn btn-default pencil-btn " disabled><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></button>
         </div>
         <div class="control-btn-wrapper">
-            <button class="control-btn btn btn-default trash-btn" disabled><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+            <button class="control-btn btn btn-default confirm-btn hidden" ><i class="fa fa-check fa-2x" aria-hidden="true"></i></button>
         </div>
+        <div class="control-btn-wrapper">
+            <button class="control-btn btn btn-default trash-btn " disabled><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+        </div>
+
         <div class="control-btn-wrapper">
             <a href="?ajax=doctorsTable&start=<?=$next?>" class="control-btn btn btn-default chev-btn nextPage"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></a>
         </div>
