@@ -10,7 +10,7 @@
     <div id="header-wrapper">
         <img src="images/avatarMale.png" alt="user-img" id="user-img">
         <div id="legend-wrapper">
-            <h5>Yacine Cherif</h5>
+            <h5>Yacine Hamza Cherif</h5>
             <h4>yacine@gmail.com</h4>
         </div>
     </div>

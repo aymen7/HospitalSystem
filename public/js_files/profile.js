@@ -168,13 +168,12 @@ $(document).ready(function () {
             editUser(docTab);
         });
         
-    })
+    });
 
     /*-----------------------------------------------------------*/
     /*---------------------send ajax query-----------------------*/
     function sendAjaxQuery(query){
         $.ajax(query).done(function (data) {
-            console.log(data);
         });
     }
 

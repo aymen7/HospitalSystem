@@ -65,7 +65,7 @@
                 <span id="pass-span" class="icon-span"><i class="fa fa-lock fa-2x" aria-hidden="true"></i></span>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Log In</button>
-            <label id='login-error-msg' class="hidden">wrong username/password combination</label>
+            <label id='login-error-msg' class="">wrong username/password combination</label>
         </form>
     </div><!-- end login-frame ---------------------->
 
