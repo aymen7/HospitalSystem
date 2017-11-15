@@ -27,25 +27,41 @@ $(document).ready(function () {
     //function to select a row when clicked
     function selectRow(table) {
         var allRows=$("table tbody tr ");
+        var flag=false;
         allRows.each(function () {
             $(this).dblclick(function clickId() {
-                $(this).toggleClass('selectedRow');
-                //edit button toggle
-                if($('.pencil-btn').attr('disabled')) {
-                    $('.pencil-btn').removeAttr('disabled');
-                }
-                else{
-                    $('.pencil-btn').attr('disabled','disabled');
-                }
-                //delete button toggle
-                if($('.trash-btn').attr('disabled')) {
-                    $('.trash-btn').removeAttr('disabled');
-                }
-                else{
-                    $('.trash-btn').attr('disabled','disabled');
-                }
-            });//end of the click
+                for(var i=0;i<allRows.length;i++){
+                    if ($(allRows[i]).hasClass('selectedRow')){
+                        //var flag is to decide whatever we mark the row selected after the db click
+                        flag=true;
+                        break;
+                    }//if
+                }//for
+
+                if($(this).hasClass('selectedRow')) flag=false;
+
+                if(!flag ){
+
+                    $(this).toggleClass('selectedRow');
+                    //edit button toggle
+                    if($('.pencil-btn').attr('disabled')) {
+                        $('.pencil-btn').removeAttr('disabled');
+                    }
+                    else{
+                        $('.pencil-btn').attr('disabled','disabled');
+                    }
+                    //delete button toggle
+                    if($('.trash-btn').attr('disabled')) {
+                        $('.trash-btn').removeAttr('disabled');
+                    }
+                    else{
+                        $('.trash-btn').attr('disabled','disabled');
+                    }
+                }//there is no row selected previously
+
+            });//end of the dbclick
         });//end of the loop
+
 
     }
     //call the function selectedRow()
@@ -83,9 +99,9 @@ $(document).ready(function () {
                        $('.pencil-btn').attr('disabled','disabled');
                    }
 
-               }
-           });
-        });
+               }//if has selectedRow class
+           });//loop
+        });//click
 
     }
     deleteUser(docTab);
