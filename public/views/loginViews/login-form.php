@@ -65,7 +65,10 @@
                 <span id="pass-span" class="icon-span"><i class="fa fa-lock fa-2x" aria-hidden="true"></i></span>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Log In</button>
-            <label id='login-error-msg' class="">wrong username/password combination</label>
+            <?php if (isset($errorLogin)) {
+                echo "<label id='login-error-msg' >Erreur nom ou mot de passe incorrect</label>";
+            }
+            ?>
         </form>
     </div><!-- end login-frame ---------------------->
 

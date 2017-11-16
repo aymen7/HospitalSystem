@@ -11,7 +11,7 @@ $medecins = \app\models\Medecin::getAll(5, $start);
 $next = $start + 5;
 $previous = ($start > 5) ? $start - 5 : 0;
 ?>
-<div class=" doctors-control " id="table-wrapper">
+<div class="doctors-control " id="table-wrapper">
     <div class="table-users">
         <div class="header">Doctors</div>
         <table class="table table-responsive" id="doctors-table" cellspacing="0">

@@ -22,6 +22,14 @@ class PatientTable extends Table
         return $this->db->prepare("SELECT * FROM patient WHERE idPatient = ?", array($id), Patient::class, true);
     }
 
+    public function findByName($name){
+        $param = array(
+            ':nom' => '%' . $name . '%',
+            ':prenom' => '%' . $name . '%'
+        );
+        return $this->db->prepare("SELECT * FROM patient WHERE nom LIKE :nom OR prenom LIKE :prenom", $param, Patient::class);
+    }
+
     /**
      * @return array
      */

@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
         if (\app\models\User::isUser($_POST['username'], $_POST['password'])) {
             header('Location: ?url=home/index');
         } else {
-            //TODO remove hidden class from error label
+            $errorLogin = true;
         }
     }
 }

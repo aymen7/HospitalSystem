@@ -14,6 +14,9 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
         //ajax call for next and previous doctors table
         require 'views/secretaireViews/doctorsTable.php';
         die();
+    } elseif(isset($_GET['ajax']) && $_GET['ajax'] == 'searchSugesstions' && isset($_GET['name'])){
+        require 'ajax/searchSugesstions.php';
+        die();
     }
     if (isset($_GET['do']) && $_GET['do'] == 'delete' && isset($_GET['id'])){
         $id = $_GET['id'];

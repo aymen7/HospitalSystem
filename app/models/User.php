@@ -1,6 +1,8 @@
 <?php
 namespace app\models;
 use app\Config;
+use app\table\MedecinTable;
+use app\table\PatientTable;
 use app\table\UserTable;
 class User
 {
@@ -127,5 +129,19 @@ class User
             $_SESSION['user'] = serialize($user);
             return true;
         }
+    }
+
+    /**
+     * @param $name string
+     * @return array
+     */
+    public static function getSuggestions($name){
+        $medTable = new MedecinTable(Config::getInstance()->getDatabase());
+        $patientTable = new PatientTable(Config::getInstance()->getDatabase());
+        $patients = $patientTable->findByName($name);
+        $medecins = $medTable->findByName($name);
+
+        //return $medecins;
+        return array_merge($patients, $medecins);
     }
 }

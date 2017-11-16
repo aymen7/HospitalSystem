@@ -167,7 +167,7 @@ $(document).ready(function () {
             deleteUser(docTab);
             editUser(docTab);
         });
-        
+
     });
 
     /*-----------------------------------------------------------*/
@@ -176,10 +176,28 @@ $(document).ready(function () {
         $.ajax(query).done(function (data) {
         });
     }
-
-
     /*-----------------------------------------------------------*/
-
+    /*-----------------------Search ajax------------------------*/
+    function ajaxSearch(name) {
+        if (name !== '') {
+            url = '?ajax=searchSugesstions&name=' + name;
+            $.ajax(url).done(function (data) {
+                $('.search-suggestions').html(data);
+            })
+        } else {
+            $('.search-suggestions').html('');
+        }
+    }
+    $(document).on('input', '#search-bar', function(){
+        ajaxSearch($(this).val())
+    });
+    $(document).on('focusin', '#search-bar', function(){
+        ajaxSearch($(this).val())
+    });
+    $(document).on('focusout', '#search-bar', function () {
+        $('.search-suggestions').html('');
+    })
+    /*----------------------------------------------------------*/
 
 
 

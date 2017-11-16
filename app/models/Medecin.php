@@ -85,4 +85,8 @@ class Medecin extends User
         $medecinTable = new MedecinTable(Config::getInstance()->getDatabase());
         $medecinTable->update($this);
     }
+
+    public function getLettre(){
+        return 'M';
+    }
 }

@@ -121,4 +121,8 @@ class Patient
         return $patientTable->getAll();
     }
 
+    public function getLettre(){
+        return 'P';
+    }
+
 }

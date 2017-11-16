@@ -29,7 +29,6 @@
     <link href="css/normalize.css" rel="stylesheet">
     <!-- font awesome -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
-
     <!-- my style css-->
     <link rel="stylesheet" href="css/profile.css">
     <!-- font links -->
@@ -60,7 +59,6 @@
 <script src="js_files/jquery-3.1.1.js"></script>
 <!-- jquery ui script-->
 <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-
 <!-- bootstrap script-->
 <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 <script src="js_files/jquery.nicescroll.js"></script>
