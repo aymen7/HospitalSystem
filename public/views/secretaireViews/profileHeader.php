@@ -12,8 +12,21 @@
             <h1>Hospital Me</h1>
         </div>
         <div class="col-lg-8 row" id="search-wraper">
-            <span id="search-span" ><i class="fa fa-search" aria-hidden="true"></i></span>
-            <input type="text" placeholder="search ...." class="form-control">
+            <form action="" method="post" id="search-form">
+                <input type="text" placeholder="search ...." class="form-control" required id="search-field" >
+                <select name="search-option" id="search-option" class="form-control" required >
+                    <option value="" selected disabled>categorie</option>
+                    <option value="nom">Nom</option>
+                    <option value="prenom">Prenom</option>
+                    <option value="tel">tel</option>
+                    <option value="specialite">spécialité</option>
+                    <option value="grade">Grade</option>
+                </select>
+                <button id="search-submit" name="search-submt" type="submit" class="btn btn-default">
+                    <i class="fa fa-search fa-2x" aria-hidden="true"></i>
+                </button>
+
+            </form>
         </div>
         <div class="col-lg-1" id="logOut-wraper">
             <div class="dropdown">

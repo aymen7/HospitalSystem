@@ -172,6 +172,94 @@ $(document).ready(function () {
     editUser(docTab);
 
     /*-------------------------------------------------------------*/
+    /*------------------------search function----------------------*/
+    function search(word,tag) {
+        //stock the original search word without manipulation to display later
+        var wordOriginal=word;
+        //get the tag val
+        var tagVal=tag.val();
+        //alert('called the search function with word :'+word +' and tag :'+tagVal);
+        //turn the search word into all lowercase for easy manipulation
+        //and replace all the white spaces with empty character (delete them)
+        word=word.toString().toLocaleLowerCase().replace(/ /g,'');
+        //result var is for testing is there any result for the search
+        var result=false;
+        switch (tagVal){
+            case "nom":
+                var allNomTd=$('.doctor-nom');
+                //loop through all of them
+                allNomTd.each(function () {
+                    if($(this).text().toString().toLocaleLowerCase().replace(/ /g,'')===word){
+                        var rowId=$(this).parent('tr').children('.doctor-id').text();
+                        result=true;
+                        alert('the found user id is :'+rowId);
+                    }//end of the if
+                });//end of the loop
+                break;
+            case "prenom":
+                var allPreNomTd=$('.doctor-prenom');
+                //loop through all of them
+                allPreNomTd.each(function () {
+                    if($(this).text().toString().toLocaleLowerCase().replace(/ /g,'')===word){
+                        var rowId=$(this).parent('tr').children('.doctor-id').text();
+                        result=true;
+                        alert('the found user id is :'+rowId);
+                    }//end of the if
+                });//end of the loop
+                break;
+            case "tel":
+                var allTelTd=$('.doctor-tel');
+                //loop through all of them
+                allTelTd.each(function () {
+                    if($(this).text().toString().toLocaleLowerCase().replace(/ /g,'')===word){
+                        var rowId=$(this).parent('tr').children('.doctor-id').text();
+                        result=true;
+                        alert('the found user id is :'+rowId);
+                    }//end of the if
+                });//end of the loop
+                break;
+            case "specialite":
+                var allSpeTd=$('.doctor-specialite');
+                //loop through all of them
+                allSpeTd.each(function () {
+                    if($(this).text().toString().toLocaleLowerCase().replace(/ /g,'')===word){
+                        var rowId=$(this).parent('tr').children('.doctor-id').text();
+                        result=true;
+                        alert('the found user id is :'+rowId);
+                    }//end of the if
+                });//end of the loop
+                break;
+            case "grade":
+                var allGraTd=$('.doctor-grade');
+                //loop through all of them
+                allGraTd.each(function () {
+                    if($(this).text().toString().toLocaleLowerCase().replace(/ /g,'')===word){
+                        var rowId=$(this).parent('tr').children('.doctor-id').text();
+                        result=true;
+                        alert('the found user id is :'+rowId);
+                    }//end of the if
+                });//end of the loop
+                break;
+
+        }//end of the switch
+        //if there is no result for the search
+        if(!result){
+            alert('there is no result for your search');
+        }
+
+    }//end of the search function
+    //call the function
+    function submitSearchForm(form) {
+        $(form).submit(function( event ) {
+            var wordSearched=$('#search-field').val();
+            var formTag=$('select[name=search-option]');
+            //console.log('word :'+wordSearched);
+            search(wordSearched,formTag);
+            event.preventDefault()
+        });
+    }
+    submitSearchForm("#search-form");
+    /*-------------------------------------------------------------*/
     /*-----------previous and next page ajax function-------------*/
 
     $(document).on('click', '.previousPage, .nextPage', function (event) {

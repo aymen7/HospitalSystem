@@ -32,12 +32,12 @@ $previous = ($start > 5) ? $start - 5 : 0;
                  * @var $medecin \app\models\Medecin
                  */
                 echo "<tr>
-                <td class='hidden'>{$medecin->getIdUser()}</td>
-                <td>{$medecin->getNom()}</td>
-                <td>{$medecin->getPrenom()}</td>
-                <td>{$medecin->getNumTel()}</td>
-                <td>{$medecin->getSpecialite()->getSpecialite()}</td>
-                <td>{$medecin->getGrade()->getGrade()}</td>
+                <td class='hidden doctor-id'>{$medecin->getIdUser()}</td>              
+                <td class='doctor-nom'>{$medecin->getNom()}</td>                               
+                <td class='doctor-prenom'>{$medecin->getPrenom()}</td>                          
+                <td class='doctor-tel'>{$medecin->getNumTel()}</td>          
+                <td class='doctor-specialite'>{$medecin->getSpecialite()->getSpecialite()}</td>                                
+                <td class='doctor-grade'>{$medecin->getGrade()->getGrade()}</td>
                 </tr>";
             }
             ?>

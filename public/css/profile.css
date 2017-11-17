@@ -30,8 +30,8 @@
         color: #fff;
 
     }
-    #search-wraper .form-control{
-        width: 80%;
+    #search-wraper .form-control:first-child{
+        width: 60%;
         margin-right: 0;
         margin-left: 0;
         display: inline;
@@ -39,6 +39,14 @@
         border-style: none;
         background-color: rgba(255,255,255,.3) !important;
         color: white;
+    }
+    #search-option{
+        width: 20%;
+        display: inline;
+    }
+    #search-submit{
+        padding: 2px 5px;
+        margin-bottom: 5px;
     }
     #search-wraper .form-control::placeholder{
         color: white;
