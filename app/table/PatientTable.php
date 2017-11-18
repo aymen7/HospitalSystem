@@ -25,9 +25,10 @@ class PatientTable extends Table
     public function findByName($name){
         $param = array(
             ':nom' => '%' . $name . '%',
-            ':prenom' => '%' . $name . '%'
+            ':prenom' => '%' . $name . '%',
+            ':nss' => '%' . $name . '%'
         );
-        return $this->db->prepare("SELECT * FROM patient WHERE nom LIKE :nom OR prenom LIKE :prenom", $param, Patient::class);
+        return $this->db->prepare("SELECT * FROM patient WHERE nom LIKE :nom OR prenom LIKE :prenom OR nss LIKE :nss", $param, Patient::class);
     }
 
     /**

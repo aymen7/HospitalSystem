@@ -15,6 +15,7 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
         require 'views/secretaireViews/doctorsTable.php';
         die();
     } elseif(isset($_GET['ajax']) && $_GET['ajax'] == 'searchSugesstions' && isset($_GET['name'])){
+        //redirect ajax query to searchSugesstions.php
         require 'ajax/searchSugesstions.php';
         die();
     }

@@ -125,4 +125,7 @@ class Patient
         return 'P';
     }
 
+    public function getAvatar(){
+        return 'images/patient.png';
+    }
 }

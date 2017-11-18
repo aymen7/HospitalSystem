@@ -46,9 +46,10 @@ class MedecinTable extends Table
     {
         $param = array(
             ':nom' => '%' . $name . '%',
-            ':prenom' => '%' . $name . '%'
+            ':prenom' => '%' . $name . '%',
+            ':poste' => 'M'
         );
-        $req = "SELECT * FROM user WHERE nom LIKE :nom OR prenom LIKE :prenom AND poste = 'M'";
+        $req = "SELECT * FROM user WHERE poste = :poste AND (nom LIKE :nom OR prenom LIKE :prenom)";
         $medecins = $this->db->prepare($req, $param, Medecin::class);
         $tab = [];
         foreach ($medecins as $medecin) {

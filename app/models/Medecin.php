@@ -89,4 +89,8 @@ class Medecin extends User
     public function getLettre(){
         return 'M';
     }
+
+    public function getAvatar(){
+        return 'images/doctor.png';
+    }
 }

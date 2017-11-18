@@ -16,7 +16,7 @@ $previous = ($start > 5) ? $start - 5 : 0;
         <div class="header">Doctors</div>
         <table class="table table-responsive" id="doctors-table" cellspacing="0">
             <thead>
-            <tr>
+            <tr class="text-center">
                 <th class="hidden">Id</th>
                 <th>Nom</th>
                 <th>Prenom</th>

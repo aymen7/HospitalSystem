@@ -141,7 +141,6 @@ class User
         $patients = $patientTable->findByName($name);
         $medecins = $medTable->findByName($name);
 
-        //return $medecins;
         return array_merge($patients, $medecins);
     }
 }

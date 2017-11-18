@@ -14,12 +14,17 @@ if (isset($_GET['name'])) {
             <div class="row">
                 <div class="col-xs-2">
                     <div class="letter">
-                        <?= $ligne->getLettre() ?>
+                        <img src="<?= $ligne->getAvatar() ?>">
                     </div>
                 </div>
                 <div class="col-xs-10">
                     <div class="nom">
-                        <?= $ligne->getNom() . " " . $ligne->getPrenom()?>
+                        <?= $ligne->getNom() . " " . $ligne->getPrenom() ?>
+                        <h6>
+                            <?php if ($ligne instanceof \app\models\Patient) {
+                                echo "nss : {$ligne->getNss()}";
+                            } ?>
+                        </h6>
                     </div>
                 </div>
             </div>

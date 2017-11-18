@@ -78,25 +78,27 @@ $(document).ready(function () {
             //loop all the rows
            allRows.each(function () {
                if($(this).hasClass("selectedRow")){
-                   var id = $(this).children(":first-child").text();
-                   var query = '?do=delete&id=' + id;
-                   sendAjaxQuery(query);
-                   //delete the row that has the 'selectedRow' class
-                   $(this).remove();
-                   //delete the class from the row
-                   $(this).toggleClass('selectedRow');
-                   //init the buttons
-                   if($('.trash-btn').attr('disabled')) {
-                       $('.trash-btn').removeAttr('disabled');
-                   }
-                   else{
-                       $('.trash-btn').attr('disabled','disabled');
-                   }
-                   if($('.pencil-btn').attr('disabled')) {
-                       $('.pencil-btn').removeAttr('disabled');
-                   }
-                   else{
-                       $('.pencil-btn').attr('disabled','disabled');
+                   if(confirm("Êtes vous sur de vouloir supprimer le medecin séléctionné")) {
+                       var id = $(this).children(":first-child").text();
+                       var query = '?do=delete&id=' + id;
+                       sendAjaxQuery(query);
+                       //delete the row that has the 'selectedRow' class
+                       $(this).remove();
+                       //delete the class from the row
+                       $(this).toggleClass('selectedRow');
+                       //init the buttons
+                       if ($('.trash-btn').attr('disabled')) {
+                           $('.trash-btn').removeAttr('disabled');
+                       }
+                       else {
+                           $('.trash-btn').attr('disabled', 'disabled');
+                       }
+                       if ($('.pencil-btn').attr('disabled')) {
+                           $('.pencil-btn').removeAttr('disabled');
+                       }
+                       else {
+                           $('.pencil-btn').attr('disabled', 'disabled');
+                       }
                    }
 
                }//if has selectedRow class
