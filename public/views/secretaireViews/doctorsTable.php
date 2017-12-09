@@ -13,25 +13,41 @@ $previous = ($start > 5) ? $start - 5 : 0;
 ?>
 <div class="doctors-control " id="table-wrapper">
     <div class="table-users">
-        <div class="header">Doctors</div>
-        <table class="table table-responsive" id="doctors-table" cellspacing="0">
-            <thead>
-            <tr class="text-center">
-                <th class="hidden">Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
-                <th>telephone </th>
-                <th>spécialité</th>
-                <th>Grade</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            foreach ($medecins as $medecin){
-                /**
-                 * @var $medecin \app\models\Medecin
-                 */
-                echo "<tr>
+        <div class="row" style="margin-bottom: 7px">
+            <div class="col s2 offset-s9">
+                <a class="btn waves-effect modal-trigger" href="#addDoctorModal">
+                    <i class="fa fa-user-plus"></i>
+                    Ajouter Medecin
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s1">
+                <div class="control-btn-wrapper">
+                    <a href="?ajax=doctorsTable&start=<?= $previous ?>"
+                       class="control-btn btn btn-default chev-btn previousPage"><i class="fa fa-chevron-left fa-2x"
+                                                                                    aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="col s10">
+                <table class="table table-responsive striped" id="doctors-table" cellspacing="0">
+                    <thead>
+                    <tr class="text-center">
+                        <th class="hidden">Id</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Téléphone</th>
+                        <th>Spécialité</th>
+                        <th>Grade</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($medecins as $medecin) {
+                        /**
+                         * @var $medecin \app\models\Medecin
+                         */
+                        echo "<tr>
                 <td class='hidden'>{$medecin->getIdUser()}</td>
                 <td>{$medecin->getNom()}</td>
                 <td>{$medecin->getPrenom()}</td>
@@ -39,33 +55,20 @@ $previous = ($start > 5) ? $start - 5 : 0;
                 <td>{$medecin->getSpecialite()->getSpecialite()}</td>
                 <td>{$medecin->getGrade()->getGrade()}</td>
                 </tr>";
-            }
-            ?>
-            </tbody>
-        </table>
-
-    </div>
-
-    <div id="table-controls">
-        <div class="control-btn-wrapper">
-            <a href="?ajax=doctorsTable&start=<?=$previous?>" class="control-btn btn btn-default chev-btn previousPage"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></a>
-        </div>
-        <div class="control-btn-wrapper">
-            <button class="control-btn btn btn-default plus-btn" ><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
-        </div>
-        <div class="control-btn-wrapper">
-            <button class="control-btn btn btn-default pencil-btn " disabled><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></button>
-        </div>
-        <div class="control-btn-wrapper">
-            <button class="control-btn btn btn-default confirm-btn hidden" ><i class="fa fa-check fa-2x" aria-hidden="true"></i></button>
-        </div>
-        <div class="control-btn-wrapper">
-            <button class="control-btn btn btn-default trash-btn " disabled><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
-        </div>
-
-        <div class="control-btn-wrapper">
-            <a href="?ajax=doctorsTable&start=<?=$next?>" class="control-btn btn btn-default chev-btn nextPage"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></a>
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col s1">
+                <div class="control-btn-wrapper">
+                    <a href="?ajax=doctorsTable&start=<?= $next ?>"
+                       class="control-btn btn btn-default chev-btn nextPage"><i class="fa fa-chevron-right fa-2x"
+                                                                                aria-hidden="true"></i></a>
+                </div>
+            </div>
         </div>
 
     </div>
+
 </div>

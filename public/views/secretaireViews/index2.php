@@ -2,11 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: Yacine
- * Date: 18/11/2017
- * Time: 14:36
+ * Date: 05/12/2017
+ * Time: 20:53
  */
 ?>
-<!DOCTYPE html>
 
 <html lang="en">
 <!-------------------------- the head tag------------------------------------------>
@@ -20,17 +19,15 @@
     <meta name="keywords"
           content="HTML,CSS,JavaScript,JQuery,Php,Ajax,responsive design,bootstrap,photoshop,web,developer">
     <meta name="author" content="Aymen Bennour ,Yassine Hamza Cherif">
+    <!-- normalize css-->
+    <link href="css/normalize.css" rel="stylesheet">
     <!-- jqueru Ui-->
     <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css">
     <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.theme.css">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Bootstrap -->
-    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- normalize css-->
-    <link href="css/normalize.css" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
     <!-- font awesome -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- my style css-->
@@ -53,22 +50,34 @@
 
 <?php include 'profileHeader.php' ?>
 <section class="container-fluid" id="main-content">
-    <?php require 'profileSideBar.php'; ?>
+    <div class="row">
+        <?php require 'profileSideBar.php'; ?>
+        <?php require 'profileMain.php'; ?>
+    </div>
+    <?php require 'addDoctorModal.php'; ?>
 </section>
 
 <!-- js scripts ------------------------------>
-
 <!-- jquery script-->
 <script src="js_files/jquery-3.1.1.js"></script>
+<!-- materialize script-->
+<script type="text/javascript" src="js_files/materialize.min.js"></script>
 <!-- jquery ui script-->
 <script src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-<!-- materialize script-->
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<!-- bootstrap script-->
-<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 <script src="js_files/jquery.nicescroll.js"></script>
+<!-- Jquery Tabledit-->
+<script src="js_files/jquery.tabledit.min.js"></script>
+<!-- create javascript 2 variables content all specilites and grades in json format to add it in tabledit in profile.js-->
+<script type="text/javascript">
+    var specilites, grades;
+    specilites = '<?php echo \app\models\Specialite::getAllinJson() ?>';
+    grades = '<?php echo \app\models\Grade::getAllinJson() ?>';
+</script>
+<script type="text/javascript">
+
+</script>
 <!-- my js script-->
 <script src="js_files/profile.js"></script>
-
 </body><!-- end of the body tag -------------->
 </html><!-- end of the document-->
+

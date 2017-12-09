@@ -7,6 +7,9 @@
  */
 namespace app\models;
 
+use app\Config;
+use app\table\GradeTable;
+
 class Grade
 {
 
@@ -65,5 +68,21 @@ class Grade
         $this->type = $type;
     }
 
+    public static function getAll(){
+        $gradeTable = new GradeTable(Config::getInstance()->getDatabase());
+        return $gradeTable->getAll();
+    }
 
+    public static function getAllinJson() {
+        $grades = self::getAll();
+        $tab = [];
+        foreach ($grades as $grade) {
+            /**
+             * @var $grade Grade
+             */
+            $tab[$grade->getIdGrade()] = $grade->getGrade();
+        }
+
+        return json_encode($tab);
+    }
 }

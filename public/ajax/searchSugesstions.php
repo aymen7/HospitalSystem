@@ -12,12 +12,12 @@ if (isset($_GET['name'])) {
         foreach ($resultat as $ligne) {
             ?>
             <div class="row">
-                <div class="col-xs-2">
+                <div class="col s2">
                     <div class="letter">
                         <img src="<?= $ligne->getAvatar() ?>">
                     </div>
                 </div>
-                <div class="col-xs-10">
+                <div class="col s10">
                     <div class="nom">
                         <?= $ligne->getNom() . " " . $ligne->getPrenom() ?>
                         <h6>

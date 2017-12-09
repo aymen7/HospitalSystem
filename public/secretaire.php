@@ -19,20 +19,25 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
         require 'ajax/searchSugesstions.php';
         die();
     }
-    if (isset($_GET['do']) && $_GET['do'] == 'delete' && isset($_GET['id'])){
-        $id = $_GET['id'];
+    if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])){
+        $id = $_POST['id'];
         \app\models\Medecin::delete($id);
         die();
-    } elseif (isset($_GET['do']) && $_GET['do'] == 'update' && isset($_GET['id']) && isset($_GET['nom'])
-        && isset($_GET['prenom']) && isset($_GET['numTel'])){
-        $medecin = \app\models\Medecin::find($_GET['id']);
-        $medecin->setNom($_GET['nom']);
-        $medecin->setPrenom($_GET['prenom']);
-        $medecin->setNumTel($_GET['numTel']);
+    } elseif (isset($_POST['action']) && $_POST['action'] == 'edit' && isset($_POST['id']) && isset($_POST['nom'])
+        && isset($_POST['prenom']) && isset($_POST['numTel']) && isset($_POST['specialite']) && isset($_POST['grade'])){
+        $medecin = \app\models\Medecin::find($_POST['id']);
+        $medecin->setNom($_POST['nom']);
+        $medecin->setPrenom($_POST['prenom']);
+        $medecin->setNumTel($_POST['numTel']);
+        $medecin->setIdGrade($_POST['grade']);
+        $medecin->setIdSpecialite($_POST['specialite']);
         $medecin->update();
         die();
+    } elseif (isset($_POST['action']) && $_POST['action'] == 'edit' && isset($_POST['id']) && isset($_POST['nom'])
+        && isset($_POST['prenom']) && isset($_POST['numTel']) && isset($_POST['specialite']) && isset($_POST['grade'])) {
     }
-    require 'views/secretaireViews/index.php';
+
+        require 'views/secretaireViews/index2.php';
 } else {
     header('Location: index.php');
 }

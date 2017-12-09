@@ -7,6 +7,9 @@
  */
 namespace app\models;
 
+use app\Config;
+use app\table\SpecialiteTable;
+
 class Specialite
 {
     private $idSpecialite;
@@ -33,7 +36,7 @@ class Specialite
     }
 
     /**
-     * @return Specialite
+     * @return String
      */
     public function getSpecialite()
     {
@@ -41,7 +44,7 @@ class Specialite
     }
 
     /**
-     * @param Specialite $specialite
+     * @param String $specialite
      */
     public function setSpecialite($specialite)
     {
@@ -64,5 +67,22 @@ class Specialite
         $this->type = $type;
     }
 
+    public static function getAll(){
+        $specialitetable = new SpecialiteTable(Config::getInstance()->getDatabase());
+        return $specialitetable->getAll();
+    }
+
+    public static function getAllinJson(){
+        $specialites = self::getAll();
+        $tab = [];
+        foreach ($specialites as $specialite){
+            /**
+             * @var $specialite Specialite
+             */
+            $tab[$specialite->getIdSpecialite()] = $specialite->getSpecialite();
+        }
+
+        return json_encode($tab);
+    }
 
 }

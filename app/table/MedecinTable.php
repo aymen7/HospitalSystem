@@ -108,8 +108,8 @@ class MedecinTable extends Table
             ':nom' => $medecin->getNom(),
             ':prenom' => $medecin->getPrenom(),
             ':numTel' => $medecin->getNumTel(),
-            ':idSpecialite' => $medecin->getSpecialite()->getIdSpecialite(),
-            ':idGrade' => $medecin->getGrade()->getIdGrade()
+            ':idSpecialite' => $medecin->getIdSpecialite(),
+            ':idGrade' => $medecin->getIdGrade()
         );
 
         $req = "UPDATE user SET username = :username, password = :password, nom = :nom, prenom = :prenom, 

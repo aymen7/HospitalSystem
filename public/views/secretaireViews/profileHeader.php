@@ -7,29 +7,25 @@
  */
 ?>
 <header class="container-fluid ">
-    <div class="container">
-        <div class="col-lg-3" id="brand-wraper">
-            <h1>Hospital Me</h1>
+    <div class="row">
+        <div class="col l3" id="brand-wraper">
+            <h3>Hospital Me</h3>
         </div>
-        <div class="col-lg-8 row" id="search-wraper">
-            <div class="search-form">
+        <div class="col l8 row" id="search-wraper">
+            <div class="search-form input-field">
                 <span id="search-span"><i class="fa fa-search" aria-hidden="true"></i></span>
                 <input type="text" placeholder="Rechercher..." id="search-bar" class="form-control">
                 <div class="search-suggestions">
-
                 </div>
             </div>
         </div>
-        <div class="col-lg-1" id="logOut-wraper">
-            <div class="dropdown">
-                <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="logout.php">Log out</a>
-                </div>
-            </div>
+        <div class="col l1" id="logOut-wraper">
+            <a class="dropdown-button btn" data-activates='dropdown1' href="#">
+                <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+            </a>
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="logout.php">Log out</a></li>
+            </ul>
         </div>
 
     </div><!-- end of the div-->

@@ -56,6 +56,24 @@ class Medecin extends User
     {
         $this->grade = $grade;
     }
+
+    /**
+     * @param int $idSpecialite
+     */
+    public function setIdSpecialite($idSpecialite)
+    {
+        $this->idSpecialite = $idSpecialite;
+    }
+
+    /**
+     * @param int $idGrade
+     */
+    public function setIdGrade($idGrade)
+    {
+        $this->idGrade = $idGrade;
+    }
+
+
     public static function getAll($size = null, $ofsset = null){
         $medecinTable = new MedecinTable(Config::getInstance()->getDatabase());
         return $medecinTable->getAll($size, $ofsset);
