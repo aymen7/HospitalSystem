@@ -73,9 +73,6 @@
     specilites = '<?php echo \app\models\Specialite::getAllinJson() ?>';
     grades = '<?php echo \app\models\Grade::getAllinJson() ?>';
 </script>
-<script type="text/javascript">
-
-</script>
 <!-- my js script-->
 <script src="js_files/profile.js"></script>
 </body><!-- end of the body tag -------------->

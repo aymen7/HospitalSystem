@@ -6,59 +6,37 @@
  * Time: 23:29
  */
 namespace app\models;
+
+/**
+ * Chambre
+ *
+ * @Table(name="chambre")
+ * @Entity
+ */
 class Chambre
 {
-    private $idChambre;
+    /**
+     * @var integer
+     *
+     * @Column(name="idChambre", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idchambre;
+
+    /**
+     * @var string
+     *
+     * @Column(name="numero", type="string", length=10, nullable=false)
+     */
     private $numero;
-    private $nombreLits;
 
     /**
-     * @return int
+     * @var boolean
+     *
+     * @Column(name="nombreLits", type="boolean", nullable=false)
      */
-    public function getIdChambre()
-    {
-        return $this->idChambre;
-    }
-
-    /**
-     * @param int $idChambre
-     */
-    public function setIdChambre($idChambre)
-    {
-        $this->idChambre = $idChambre;
-    }
-
-    /**
-     * @return int
-     */
-    public function getNumero()
-    {
-        return $this->numero;
-    }
-
-    /**
-     * @param int $numero
-     */
-    public function setNumero($numero)
-    {
-        $this->numero = $numero;
-    }
-
-    /**
-     * @return int
-     */
-    public function getNombreLits()
-    {
-        return $this->nombreLits;
-    }
-
-    /**
-     * @param int $nombreLits
-     */
-    public function setNombreLits($nombreLits)
-    {
-        $this->nombreLits = $nombreLits;
-    }
+    private $nombrelits;
 
 
 }

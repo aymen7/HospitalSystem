@@ -7,9 +7,11 @@
  */
 session_start();
 require_once '../app/Autoloader.php';
-
 \app\Autoloader::register();
+
 if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\models\Secretaire) {
+    $entityManger = \app\Config::getInstance()->getEntityManager();
+
     if (isset($_GET['ajax']) && $_GET['ajax'] == 'doctorsTable') {
         //ajax call for next and previous doctors table
         require 'views/secretaireViews/doctorsTable.php';
@@ -21,7 +23,10 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
     }
     if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])){
         $id = $_POST['id'];
-        \app\models\Medecin::delete($id);
+        $medecin = $entityManger->find(\app\R::MEDECIN, $id);
+        $entityManger->remove($medecin);
+        $entityManger->flush();
+
         die();
     } elseif (isset($_POST['action']) && $_POST['action'] == 'edit' && isset($_POST['id']) && isset($_POST['nom'])
         && isset($_POST['prenom']) && isset($_POST['numTel']) && isset($_POST['specialite']) && isset($_POST['grade'])){

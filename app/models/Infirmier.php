@@ -6,60 +6,14 @@
  * Time: 23:43
  */
 namespace app\models;
+require_once 'User.php';
 
+/**
+ * Infirmier
+ * @Entity
+ */
 class Infirmier extends User
 {
-    private $idSpecialite;
-    private $specialite;
-    private $idGrade;
-    private $grade;
 
-    /**
-     * @return mixed
-     */
-    public function getIdSpecialite()
-    {
-        return $this->idSpecialite;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdGrade()
-    {
-        return $this->idGrade;
-    }
-
-    /**
-     * @return Specialite
-     */
-    public function getSpecialite()
-    {
-        return $this->specialite;
-    }
-
-    /**
-     * @param Specialite $specialite
-     */
-    public function setSpecialite($specialite)
-    {
-        $this->specialite = $specialite;
-    }
-
-    /**
-     * @return Grade
-     */
-    public function getGrade()
-    {
-        return $this->grade;
-    }
-
-    /**
-     * @param Grade $grade
-     */
-    public function setGrade($grade)
-    {
-        $this->grade = $grade;
-    }
 
 }

@@ -7,77 +7,51 @@
  */
 namespace app\models;
 
-class MaladieChronique
+
+/**
+ * Maladiechronique
+ *
+ * @Table(name="maladiechronique", indexes={@Index(name="idPatient", columns={"idPatient"}), @Index(name="idUser", columns={"idUser"})})
+ * @Entity
+ */
+class Maladiechronique
 {
-    private $idMaladie;
+    /**
+     * @var integer
+     *
+     * @Column(name="idMaladie", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idmaladie;
+
+    /**
+     * @var string
+     *
+     * @Column(name="maladie", type="string", length=30, nullable=false)
+     */
     private $maladie;
-    private $patient;
-    private $medecin;
 
     /**
-     * @return int
+     * @var \Patient
+     *
+     * @ManyToOne(targetEntity="Patient")
+     * @JoinColumns({
+     *   @JoinColumn(name="idPatient", referencedColumnName="idPatient")
+     * })
      */
-    public function getIdMaladie()
-    {
-        return $this->idMaladie;
-    }
+    private $idpatient;
 
     /**
-     * @param int $idMaladie
+     * @var \User
+     *
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumns({
+     *   @JoinColumn(name="idUser", referencedColumnName="idUser")
+     * })
      */
-    public function setIdMaladie($idMaladie)
-    {
-        $this->idMaladie = $idMaladie;
-    }
-
-    /**
-     * @return String
-     */
-    public function getMaladie()
-    {
-        return $this->maladie;
-    }
-
-    /**
-     * @param String $maladie
-     */
-    public function setMaladie($maladie)
-    {
-        $this->maladie = $maladie;
-    }
-
-    /**
-     * @return Patient
-     */
-    public function getPatient()
-    {
-        return $this->patient;
-    }
-
-    /**
-     * @param Patient $patient
-     */
-    public function setPatient($patient)
-    {
-        $this->patient = $patient;
-    }
-
-    /**
-     * @return Medecin
-     */
-    public function getMedecin()
-    {
-        return $this->medecin;
-    }
-
-    /**
-     * @param Medecin $medecin
-     */
-    public function setMedecin($medecin)
-    {
-        $this->medecin = $medecin;
-    }
-
+    private $iduser;
 
 
 }
+

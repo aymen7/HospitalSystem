@@ -1,0 +1,15 @@
+{
+    "name": "yacine/hospital-system",
+    "require": {
+        "doctrine/orm": "2.5.14"
+    },
+    "autoload": {
+        "psr-0": {"": "app/"}
+    },
+    "authors": [
+        {
+            "name": "Yacine Hamza-Cherif",
+            "email": "yassinehm17@gmail.com"
+        }
+    ]
+}

@@ -7,93 +7,58 @@
  */
 namespace app\models;
 
+
+/**
+ * Lit
+ *
+ * @Table(name="lit", indexes={@Index(name="idChambre", columns={"idChambre"}), @Index(name="idPatient", columns={"idPatient"})})
+ * @Entity
+ */
 class Lit
 {
-    private $idLit;
-    private $dateDebut;
-    private $dateFin;
-    private $chambre;
-    private $patient;
+    /**
+     * @var integer
+     *
+     * @Column(name="idLit", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idlit;
 
     /**
-     * @return int
+     * @var \DateTime
+     *
+     * @Column(name="dateDebut", type="date", nullable=false)
      */
-    public function getIdLit()
-    {
-        return $this->idLit;
-    }
+    private $datedebut;
 
     /**
-     * @param int $idLit
+     * @var \DateTime
+     *
+     * @Column(name="dateFin", type="date", nullable=false)
      */
-    public function setIdLit($idLit)
-    {
-        $this->idLit = $idLit;
-    }
+    private $datefin;
 
     /**
-     * @return DateTime
+     * @var \Chambre
+     *
+     * @ManyToOne(targetEntity="Chambre")
+     * @JoinColumns({
+     *   @JoinColumn(name="idChambre", referencedColumnName="idChambre")
+     * })
      */
-    public function getDateDebut()
-    {
-        return $this->dateDebut;
-    }
+    private $idchambre;
 
     /**
-     * @param DateTime $dateDebut
+     * @var \Patient
+     *
+     * @ManyToOne(targetEntity="Patient")
+     * @JoinColumns({
+     *   @JoinColumn(name="idPatient", referencedColumnName="idPatient")
+     * })
      */
-    public function setDateDebut($dateDebut)
-    {
-        $this->dateDebut = $dateDebut;
-    }
-
-    /**
-     * @return DateTime
-     */
-    public function getDateFin()
-    {
-        return $this->dateFin;
-    }
-
-    /**
-     * @param DateTime $dateFin
-     */
-    public function setDateFin($dateFin)
-    {
-        $this->dateFin = $dateFin;
-    }
-
-    /**
-     * @return Chambre
-     */
-    public function getChambre()
-    {
-        return $this->chambre;
-    }
-
-    /**
-     * @param Chambre $chambre
-     */
-    public function setChambre($chambre)
-    {
-        $this->chambre = $chambre;
-    }
-
-    /**
-     * @return Patient
-     */
-    public function getPatient()
-    {
-        return $this->patient;
-    }
-
-    /**
-     * @param Patient $patient
-     */
-    public function setPatient($patient)
-    {
-        $this->patient = $patient;
-    }
+    private $idpatient;
 
 
 }
+

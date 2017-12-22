@@ -7,77 +7,49 @@
  */
 namespace app\models;
 
+
+
+/**
+ * Examen
+ *
+ * @Table(name="examen", indexes={@Index(name="idConsultation", columns={"idConsultation"})})
+ * @Entity
+ */
 class Examen
 {
-    private $idExamen;
+    /**
+     * @var integer
+     *
+     * @Column(name="idExamen", type="bigint", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idexamen;
+
+    /**
+     * @var string
+     *
+     * @Column(name="demande", type="string", length=200, nullable=false)
+     */
     private $demande;
+
+    /**
+     * @var boolean
+     *
+     * @Column(name="effectue", type="boolean", nullable=false)
+     */
     private $effectue;
-    private $consultation;
-
 
     /**
-     * @return int
+     * @var \Consultation
+     *
+     * @ManyToOne(targetEntity="Consultation")
+     * @JoinColumns({
+     *   @JoinColumn(name="idConsultation", referencedColumnName="idConsultation")
+     * })
      */
-    public function getIdExamen()
-    {
-        return $this->idExamen;
-    }
-
-    /**
-     * @param int $idExamen
-     */
-    public function setIdExamen($idExamen)
-    {
-        $this->idExamen = $idExamen;
-    }
-
-    /**
-     * @return String
-     */
-    public function getDemande()
-    {
-        return $this->demande;
-    }
-
-    /**
-     * @param String $demande
-     */
-    public function setDemande($demande)
-    {
-        $this->demande = $demande;
-    }
-
-    /**
-     * @return int
-     */
-    public function getEffectue()
-    {
-        return $this->effectue;
-    }
-
-    /**
-     * @param int $effectue
-     */
-    public function setEffectue($effectue)
-    {
-        $this->effectue = $effectue;
-    }
-
-    /**
-     * @return Consultation
-     */
-    public function getConsultation()
-    {
-        return $this->consultation;
-    }
-
-    /**
-     * @param Consultation $consultation
-     */
-    public function setConsultation($consultation)
-    {
-        $this->consultation = $consultation;
-    }
+    private $idconsultation;
 
 
 }
+

@@ -7,94 +7,57 @@
  */
 namespace app\models;
 
+
+/**
+ * Consultation
+ *
+ * @Table(name="consultation", indexes={@Index(name="idPatient", columns={"idPatient"}), @Index(name="idUser", columns={"idUser"})})
+ * @Entity
+ */
 class Consultation
 {
-    private $idConsultation;
+    /**
+     * @var integer
+     *
+     * @Column(name="idConsultation", type="bigint", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idconsultation;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="date", type="datetime", nullable=false)
+     */
     private $date;
+
+    /**
+     * @var string
+     *
+     * @Column(name="rapport", type="text", length=65535, nullable=false)
+     */
     private $rapport;
-    private $patient;
-    private $medecin;
 
     /**
-     * @return int
+     * @var \Patient
+     *
+     * @ManyToOne(targetEntity="Patient")
+     * @JoinColumns({
+     *   @JoinColumn(name="idPatient", referencedColumnName="idPatient")
+     * })
      */
-    public function getIdConsultation()
-    {
-        return $this->idConsultation;
-    }
+    private $idpatient;
 
     /**
-     * @param int $idConsultation
+     * @var \User
+     *
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumns({
+     *   @JoinColumn(name="idUser", referencedColumnName="idUser")
+     * })
      */
-    public function setIdConsultation($idConsultation)
-    {
-        $this->idConsultation = $idConsultation;
-    }
-
-    /**
-     * @return DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * @param DateTime $date
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-    }
-
-    /**
-     * @return String
-     */
-    public function getRapport()
-    {
-        return $this->rapport;
-    }
-
-    /**
-     * @param String $rapport
-     */
-    public function setRapport($rapport)
-    {
-        $this->rapport = $rapport;
-    }
-
-    /**
-     * @return Patient
-     */
-    public function getPatient()
-    {
-        return $this->patient;
-    }
-
-    /**
-     * @param Patient $patient
-     */
-    public function setPatient($patient)
-    {
-        $this->patient = $patient;
-    }
-
-    /**
-     * @return Medecin
-     */
-    public function getMedecin()
-    {
-        return $this->medecin;
-    }
-
-    /**
-     * @param Medecin $medecin
-     */
-    public function setMedecin($medecin)
-    {
-        $this->medecin = $medecin;
-    }
-
+    private $iduser;
 
 
 }

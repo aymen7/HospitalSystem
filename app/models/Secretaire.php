@@ -6,6 +6,11 @@
  * Time: 23:52
  */
 namespace app\models;
+
+/**
+ * Secretaire
+ * @Entity
+ */
 class Secretaire extends User
 {
 

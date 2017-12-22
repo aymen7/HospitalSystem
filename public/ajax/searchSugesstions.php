@@ -14,7 +14,7 @@ if (isset($_GET['name'])) {
             <div class="row">
                 <div class="col s2">
                     <div class="letter">
-                        <img src="<?= $ligne->getAvatar() ?>">
+                        <img src="<?= $ligne->getAvatar() ?>" class="responsive-img">
                     </div>
                 </div>
                 <div class="col s10">

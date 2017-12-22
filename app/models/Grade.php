@@ -7,70 +7,44 @@
  */
 namespace app\models;
 
-use app\Config;
-use app\table\GradeTable;
 
+use app\Config;
+use app\R;
+
+/**
+ * app\Grade
+ *
+ * @Entity
+ * @Table(name="grade")
+ */
 class Grade
 {
+    /**
+     * @var integer
+     *
+     * @Column(name="idGrade", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idgrade;
 
-    private $idGrade;
+    /**
+     * @var string
+     *
+     * @Column(name="grade", type="string", length=30, nullable=false)
+     */
     private $grade;
+
+    /**
+     * @var boolean
+     *
+     * @Column(name="type", type="boolean", nullable=false)
+     */
     private $type;
 
-    const MEDECIN = 0;
-    const INFERMIER = 1;
-
-    /**
-     * @return int
-     */
-    public function getIdGrade()
-    {
-        return $this->idGrade;
-    }
-
-    /**
-     * @param int $idGrade
-     */
-    public function setIdGrade($idGrade)
-    {
-        $this->idGrade = $idGrade;
-    }
-
-    /**
-     * @return String
-     */
-    public function getGrade()
-    {
-        return $this->grade;
-    }
-
-    /**
-     * @param String $grade
-     */
-    public function setGrade($grade)
-    {
-        $this->grade = $grade;
-    }
-
-    /**
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param int $type
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-    }
-
     public static function getAll(){
-        $gradeTable = new GradeTable(Config::getInstance()->getDatabase());
-        return $gradeTable->getAll();
+        $gradeRepo = Config::getInstance()->getEntityManager()->getRepository(R::GRADE);
+        return $gradeRepo->findAll();
     }
 
     public static function getAllinJson() {
@@ -85,4 +59,53 @@ class Grade
 
         return json_encode($tab);
     }
+
+    /**
+     * @return int
+     */
+    public function getIdgrade()
+    {
+        return $this->idgrade;
+    }
+
+    /**
+     * @param int $idgrade
+     */
+    public function setIdgrade($idgrade)
+    {
+        $this->idgrade = $idgrade;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    /**
+     * @param string $grade
+     */
+    public function setGrade($grade)
+    {
+        $this->grade = $grade;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param bool $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
 }
+

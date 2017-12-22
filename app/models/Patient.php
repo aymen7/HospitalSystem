@@ -8,117 +8,85 @@
 namespace app\models;
 
 use app\Config;
+use app\R;
 use app\table\PatientTable;
 
+
+/**
+ * Patient
+ *
+ * @Table(name="patient", indexes={@Index(name="idUser", columns={"idUser"})})
+ * @Entity
+ */
 class Patient
 {
-    private $idPatient;
+    /**
+     * @var integer
+     *
+     * @Column(name="idPatient", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idpatient;
+
+    /**
+     * @var string
+     *
+     * @Column(name="nom", type="string", length=30, nullable=false)
+     */
     private $nom;
+
+    /**
+     * @var string
+     *
+     * @Column(name="prenom", type="string", length=30, nullable=false)
+     */
     private $prenom;
-    private $dateDeNaissance;
-    private $numTel;
+
+    /**
+     * @var \DateTime
+     *
+     * @Column(name="dateDeNaissance", type="date", nullable=false)
+     */
+    private $datedenaissance;
+
+    /**
+     * @var string
+     *
+     * @Column(name="numTel", type="string", length=10, nullable=false)
+     */
+    private $numtel;
+
+    /**
+     * @var string
+     *
+     * @Column(name="nss", type="string", length=20, nullable=false)
+     */
     private $nss;
 
     /**
-     * @return int
+     * @var \User
+     *
+     * @ManyToOne(targetEntity="User")
+     * @JoinColumns({
+     *   @JoinColumn(name="idUser", referencedColumnName="idUser")
+     * })
      */
-    public function getIdPatient()
-    {
-        return $this->idPatient;
-    }
+    private $iduser;
 
-    /**
-     * @param int $idPatient
-     */
-    public function setIdPatient($idPatient)
-    {
-        $this->idPatient = $idPatient;
-    }
 
-    /**
-     * @return String
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
 
-    /**
-     * @param String $nom
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-    }
 
-    /**
-     * @return String
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
-    }
 
-    /**
-     * @param String $prenom
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-    }
 
-    /**
-     * @return DateTime
-     */
-    public function getDateDeNaissance()
-    {
-        return $this->dateDeNaissance;
-    }
 
-    /**
-     * @param DateTime $dateDeNaissance
-     */
-    public function setDateDeNaissance($dateDeNaissance)
-    {
-        $this->dateDeNaissance = $dateDeNaissance;
-    }
 
-    /**
-     * @return String
-     */
-    public function getNumTel()
-    {
-        return $this->numTel;
-    }
 
-    /**
-     * @param String $numTel
-     */
-    public function setNumTel($numTel)
-    {
-        $this->numTel = $numTel;
-    }
-
-    /**
-     * @return String
-     */
-    public function getNss()
-    {
-        return $this->nss;
-    }
-
-    /**
-     * @param mixed String
-     */
-    public function setNss($nss)
-    {
-        $this->nss = $nss;
-    }
 
 
     public static function getAll(){
-        $patientTable = new PatientTable(Config::getInstance()->getDatabase());
-        return $patientTable->getAll();
+        $patientRepo = Config::getInstance()->getEntityManager()->getRepository(R::Patient);
+        return $patientRepo->findAll();
     }
 
     public function getLettre(){

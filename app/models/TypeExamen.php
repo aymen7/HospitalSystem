@@ -7,76 +7,48 @@
  */
 namespace app\models;
 
-class TypeExamen
+
+/**
+ * Typeexamen
+ *
+ * @Table(name="typeexamen", indexes={@Index(name="idExamen", columns={"idExamen"})})
+ * @Entity
+ */
+class Typeexamen
 {
-    private $idTypeExamen;
+    /**
+     * @var integer
+     *
+     * @Column(name="idTypeExamen", type="bigint", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idtypeexamen;
+
+    /**
+     * @var string
+     *
+     * @Column(name="analyse", type="string", length=100, nullable=false)
+     */
     private $analyse;
+
+    /**
+     * @var string
+     *
+     * @Column(name="resultat", type="string", length=100, nullable=false)
+     */
     private $resultat;
-    private $examen;
 
     /**
-     * @return int
+     * @var \Examen
+     *
+     * @ManyToOne(targetEntity="Examen")
+     * @JoinColumns({
+     *   @JoinColumn(name="idExamen", referencedColumnName="idExamen")
+     * })
      */
-    public function getIdTypeExamen()
-    {
-        return $this->idTypeExamen;
-    }
-
-    /**
-     * @param int $idTypeExamen
-     */
-    public function setIdTypeExamen($idTypeExamen)
-    {
-        $this->idTypeExamen = $idTypeExamen;
-    }
-
-    /**
-     * @return String
-     */
-    public function getAnalyse()
-    {
-        return $this->analyse;
-    }
-
-    /**
-     * @param String $analyse
-     */
-    public function setAnalyse($analyse)
-    {
-        $this->analyse = $analyse;
-    }
-
-    /**
-     * @return String
-     */
-    public function getResultat()
-    {
-        return $this->resultat;
-    }
-
-    /**
-     * @param String $resultat
-     */
-    public function setResultat($resultat)
-    {
-        $this->resultat = $resultat;
-    }
-
-    /**
-     * @return Examen
-     */
-    public function getExamen()
-    {
-        return $this->examen;
-    }
-
-    /**
-     * @param Examen $examen
-     */
-    public function setExamen($examen)
-    {
-        $this->examen = $examen;
-    }
+    private $idexamen;
 
 
 }
+

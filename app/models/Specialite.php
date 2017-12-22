@@ -8,35 +8,58 @@
 namespace app\models;
 
 use app\Config;
+use app\R;
 use app\table\SpecialiteTable;
 
+/**
+ * Specialite
+ *
+ * @Table(name="specialite")
+ * @Entity
+ */
 class Specialite
 {
-    private $idSpecialite;
-    private $specialite;
-    private $type;
+    /**
+     * @var integer
+     *
+     * @Column(name="idSpecialite", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
+     */
+    private $idspecialite;
 
-    const MEDECIN = 0;
-    const INFERMIER = 1;
+    /**
+     * @var string
+     *
+     * @Column(name="specialite", type="string", length=30, nullable=false)
+     */
+    private $specialite;
+
+    /**
+     * @var boolean
+     *
+     * @Column(name="type", type="boolean", nullable=false)
+     */
+    private $type;
 
     /**
      * @return int
      */
-    public function getIdSpecialite()
+    public function getIdspecialite()
     {
-        return $this->idSpecialite;
+        return $this->idspecialite;
     }
 
     /**
-     * @param int $idSpecialite
+     * @param int $idspecialite
      */
-    public function setIdSpecialite($idSpecialite)
+    public function setIdspecialite($idspecialite)
     {
-        $this->idSpecialite = $idSpecialite;
+        $this->idspecialite = $idspecialite;
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getSpecialite()
     {
@@ -44,7 +67,7 @@ class Specialite
     }
 
     /**
-     * @param String $specialite
+     * @param string $specialite
      */
     public function setSpecialite($specialite)
     {
@@ -52,15 +75,15 @@ class Specialite
     }
 
     /**
-     * @return int
+     * @return bool
      */
-    public function getType()
+    public function isType()
     {
         return $this->type;
     }
 
     /**
-     * @param int $type
+     * @param bool $type
      */
     public function setType($type)
     {
@@ -68,8 +91,8 @@ class Specialite
     }
 
     public static function getAll(){
-        $specialitetable = new SpecialiteTable(Config::getInstance()->getDatabase());
-        return $specialitetable->getAll();
+        $specialiteRepo = Config::getInstance()->getEntityManager()->getRepository(R::Specialite);
+        return $specialiteRepo->findAll();
     }
 
     public static function getAllinJson(){
@@ -84,5 +107,6 @@ class Specialite
 
         return json_encode($tab);
     }
-
 }
+
+

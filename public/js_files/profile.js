@@ -73,6 +73,8 @@ $(document).ready(function () {
         $.ajax(url).done(function (data) {
             $('.doctors-control').replaceWith(data);
             initTabledit();
+        }).fail(function () {
+            
         });
 
     });
@@ -105,9 +107,9 @@ $(document).ready(function () {
         ajaxSearch($(this).val())
     });
     //when user remove the cursor from the search bar
-    $(document).on('focusout', '#search-bar', function () {
+   /* $(document).on('focusout', '#search-bar', function () {
         $('.search-suggestions').html('');
-    });
+    });*/
     /*----------------------------------------------------------*/
 
 
