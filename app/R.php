@@ -13,6 +13,9 @@ class R
 {
     const GRADE = "app\\models\\Grade";
     const MEDECIN = "app\\models\\Medecin";
-    const Patient = "app\\models\\Patient";
-    const Specialite = "app\\models\\Specialite";
+    const PATIENT = "app\\models\\Patient";
+    const SPECIALITE = "app\\models\\Specialite";
+    const USER = "app\\models\\User";
+    const INFIRMIER = "app\\models\\Infirmier";
+
 }

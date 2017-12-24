@@ -24,6 +24,9 @@
         font-family: 'Khula', sans-serif;
         background-color: rgba(241, 241, 241, .9);
     }
+    .text-center{
+        text-align: center;
+    }
 
     /*---- header ------------------------------------------*/
     header {
@@ -35,7 +38,7 @@
     }
 
     #search-wraper, #search-wraper .input-field{
-        margin-top: 0px;
+        margin-top: -10px;
     }
 
     #search-wraper input{
@@ -141,10 +144,14 @@
     }
 
     .stat {
-        border-radius: 5px;
+        border-radius: 0px;
         padding: 15px 0px 15px 0px;
         color: white;
         margin-right: 1%;
+    }
+
+    .stat a{
+        color: #FFF;
     }
 
     #stats-wrapper .l3 {
@@ -208,10 +215,10 @@
     table.striped > tbody > tr:nth-child(2n+1){
         background-color: #FFF;
     }
-    #doctors-table .tabledit-input{
+    table .tabledit-input{
         margin: 0;
     }
-    #doctors-table thead{
+    table thead{
         background-color: #3c3c3c;
         color: #FFF;
     }

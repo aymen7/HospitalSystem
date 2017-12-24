@@ -9,7 +9,7 @@
 <header class="container-fluid ">
     <div class="row">
         <div class="col l3" id="brand-wraper">
-            <h3>Hospital Me</h3>
+            <h4>Hospital Me</h4>
         </div>
         <div class="col l8 row" id="search-wraper">
             <div class="search-form input-field">

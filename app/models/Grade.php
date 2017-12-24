@@ -5,6 +5,7 @@
  * Date: 01/11/2017
  * Time: 23:41
  */
+
 namespace app\models;
 
 
@@ -19,6 +20,8 @@ use app\R;
  */
 class Grade
 {
+    const MEDECIN = false;
+    const INFIRMIER = true;
     /**
      * @var integer
      *
@@ -27,14 +30,12 @@ class Grade
      * @GeneratedValue(strategy="IDENTITY")
      */
     private $idgrade;
-
     /**
      * @var string
      *
      * @Column(name="grade", type="string", length=30, nullable=false)
      */
     private $grade;
-
     /**
      * @var boolean
      *
@@ -42,13 +43,9 @@ class Grade
      */
     private $type;
 
-    public static function getAll(){
-        $gradeRepo = Config::getInstance()->getEntityManager()->getRepository(R::GRADE);
-        return $gradeRepo->findAll();
-    }
-
-    public static function getAllinJson() {
-        $grades = self::getAll();
+    public static function getAllinJson($type = null)
+    {
+        $grades = self::getAll($type);
         $tab = [];
         foreach ($grades as $grade) {
             /**
@@ -58,6 +55,14 @@ class Grade
         }
 
         return json_encode($tab);
+    }
+
+    public static function getAll($type = null)
+    {
+        $gradeRepo = Config::getInstance()->getEntityManager()->getRepository(R::GRADE);
+        if (!isset($type))
+            return $gradeRepo->findAll();
+        return $gradeRepo->findBy(array('type' => $type));
     }
 
     /**

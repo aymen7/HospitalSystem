@@ -5,11 +5,11 @@
  * Date: 01/11/2017
  * Time: 23:53
  */
+
 namespace app\models;
 
 use app\Config;
 use app\R;
-use app\table\SpecialiteTable;
 
 /**
  * Specialite
@@ -19,6 +19,8 @@ use app\table\SpecialiteTable;
  */
 class Specialite
 {
+    const MEDECIN = false;
+    const INFIRMIER = true;
     /**
      * @var integer
      *
@@ -27,20 +29,40 @@ class Specialite
      * @GeneratedValue(strategy="IDENTITY")
      */
     private $idspecialite;
-
     /**
      * @var string
      *
      * @Column(name="specialite", type="string", length=30, nullable=false)
      */
     private $specialite;
-
     /**
      * @var boolean
      *
      * @Column(name="type", type="boolean", nullable=false)
      */
     private $type;
+
+    public static function getAllinJson($type = null)
+    {
+        $specialites = self::getAll($type);
+        $tab = [];
+        foreach ($specialites as $specialite) {
+            /**
+             * @var $specialite Specialite
+             */
+            $tab[$specialite->getIdSpecialite()] = $specialite->getSpecialite();
+        }
+
+        return json_encode($tab);
+    }
+
+    public static function getAll($type = null)
+    {
+        $specialiteRepo = Config::getInstance()->getEntityManager()->getRepository(R::SPECIALITE);
+        if (!isset($type))
+            return $specialiteRepo->findAll();
+        return $specialiteRepo->findBy(array('type' => $type));
+    }
 
     /**
      * @return int
@@ -88,24 +110,6 @@ class Specialite
     public function setType($type)
     {
         $this->type = $type;
-    }
-
-    public static function getAll(){
-        $specialiteRepo = Config::getInstance()->getEntityManager()->getRepository(R::Specialite);
-        return $specialiteRepo->findAll();
-    }
-
-    public static function getAllinJson(){
-        $specialites = self::getAll();
-        $tab = [];
-        foreach ($specialites as $specialite){
-            /**
-             * @var $specialite Specialite
-             */
-            $tab[$specialite->getIdSpecialite()] = $specialite->getSpecialite();
-        }
-
-        return json_encode($tab);
     }
 }
 

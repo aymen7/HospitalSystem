@@ -6,6 +6,9 @@
  * Time: 23:43
  */
 namespace app\models;
+use app\Config;
+use app\R;
+
 require_once 'User.php';
 
 /**
@@ -15,5 +18,10 @@ require_once 'User.php';
 class Infirmier extends User
 {
 
+    public static function getAll($size = null, $offset = null){
+        $infirmierRepo = Config::getInstance()->getEntityManager()->getRepository(R::INFIRMIER);
+        return $infirmierRepo->findBy(array(), array(), $size, $offset);
+
+    }
 
 }

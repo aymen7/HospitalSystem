@@ -7,12 +7,13 @@ if (!isset($_SESSION['user']))
     header('Location: login.php');
 else {
     $user = unserialize($_SESSION['user']);
-    if ($user instanceof \app\models\Secretaire)
-        header('Location: secretaire.php');
+    if ($user instanceof \app\models\Infirmier)
+        header('Location: infirmier');
+
     else if ($user instanceof \app\models\Medecin)
         header('Location: medecin.php');
-    else if ($user instanceof \app\models\Infirmier)
-        header('Location: infirmier');
+    else if ($user instanceof \app\models\Secretaire)
+        header('Location: secretaire.php');
 
 }
 ?>

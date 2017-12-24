@@ -2,25 +2,24 @@
 /**
  * Created by PhpStorm.
  * User: Yacine
- * Date: 04/11/2017
- * Time: 20:10
+ * Date: 23/12/2017
+ * Time: 20:12
  */
-
 $start = isset($_GET['start']) ? $_GET['start'] : 0;
-$medecins = \app\models\Medecin::getAll(5, $start);
+$infirmiers = \app\models\Infirmier::getAll(5, $start);
 $next = $start + 5;
 $previous = ($start > 5) ? $start - 5 : 0;
-if (!empty($medecins)) {
+if (!empty($infirmiers)) {
     ?>
 
     <div class="doctors-control " id="table-wrapper">
-        <h2 class="text-center">Médecins</h2>
+        <h2 class="text-center">Infirmier</h2>
         <div class="table-users">
             <div class="row" style="margin-bottom: 7px">
                 <div class="col s2 offset-s9">
                     <a class="btn waves-effect modal-trigger" href="#addDoctorModal">
                         <i class="fa fa-user-plus"></i>
-                        Ajouter Medecin
+                        Ajouter Infirmier
                     </a>
                 </div>
             </div>
@@ -34,7 +33,7 @@ if (!empty($medecins)) {
                     </div>
                 </div>
                 <div class="col s10">
-                    <table class="table table-responsive striped" id="doctors-table" cellspacing="0">
+                    <table class="table table-responsive striped" id="infirmiers-table" cellspacing="0">
                         <thead>
                         <tr class="text-center">
                             <th class="hidden">Id</th>
@@ -47,17 +46,17 @@ if (!empty($medecins)) {
                         </thead>
                         <tbody>
                         <?php
-                        foreach ($medecins as $medecin) {
+                        foreach ($infirmiers as $infirmier) {
                             /**
-                             * @var $medecin \app\models\Medecin
+                             * @var $infirmier \app\models\Infirmier
                              */
                             echo "<tr>
-                <td class='hidden'>{$medecin->getIdUser()}</td>
-                <td>{$medecin->getNom()}</td>
-                <td>{$medecin->getPrenom()}</td>
-                <td>{$medecin->getNumTel()}</td>
-                <td>{$medecin->getSpecialite()->getSpecialite()}</td>
-                <td>{$medecin->getGrade()->getGrade()}</td>
+                <td class='hidden'>{$infirmier->getIdUser()}</td>
+                <td>{$infirmier->getNom()}</td>
+                <td>{$infirmier->getPrenom()}</td>
+                <td>{$infirmier->getNumTel()}</td>
+                <td>{$infirmier->getSpecialite()->getSpecialite()}</td>
+                <td>{$infirmier->getGrade()->getGrade()}</td>
                 </tr>";
                         }
                         ?>
@@ -67,20 +66,20 @@ if (!empty($medecins)) {
                 <div class="col s1">
                     <div class="control-btn-wrapper">
                         <a href="?ajax=doctorsTable&start=<?= $next ?>"
-                           class="control-btn btn btn-default chev-btn nextPage"><i class="fa fa-chevron-right fa-2x"
-                                                                                    aria-hidden="true"></i></a>
+                           class="control-btn btn btn-default chev-btn nextPage">
+                            <i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
         </div>
-        <?php require "addDoctorModal.php" ?>
     </div>
     <!-- create javascript 2 variables content all specilites and grades in json format to add it in tabledit in profile.js-->
     <script type="text/javascript">
         var specialites, grades;
-        specialites = '<?php echo \app\models\Specialite::getAllinJson(\app\models\Specialite::MEDECIN) ?>';
-        grades = '<?php echo \app\models\Grade::getAllinJson(\app\models\Grade::MEDECIN) ?>';
+        specialites = '<?php echo \app\models\Specialite::getAllinJson(\app\models\Specialite::INFIRMIER) ?>';
+        grades = '<?php echo \app\models\Grade::getAllinJson(\app\models\Grade::INFIRMIER) ?>';
     </script>
 
     <?php

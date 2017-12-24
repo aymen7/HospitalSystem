@@ -8,7 +8,6 @@
 namespace app\models;
 use app\Config;
 use app\R;
-use app\table\MedecinTable;
 
 /**
  * Medecin
@@ -17,10 +16,23 @@ use app\table\MedecinTable;
 class Medecin extends User
 {
 
-    public static function getAll($size = null, $ofsset = null){
+    public static function getAll($size = null, $offset = null){
         $medecinRepo = Config::getInstance()->getEntityManager()->getRepository(R::MEDECIN);
-        return $medecinRepo->findBy(array(), array(), $size, $ofsset);
+        return $medecinRepo->findBy(array(), array(), $size, $offset);
 
+    }
+
+    public static function getAllInJson(){
+        $medecins = self::getAll();
+        $tab = [];
+        $tab['null'] = "";
+        foreach ($medecins as $medecin){
+            /**
+             * @var $medecin Medecin
+             */
+            $tab[$medecin->getIduser()] = $medecin->__toString();
+        }
+        return json_encode($tab);
     }
 
     /**

@@ -65,28 +65,130 @@ class Patient
     private $nss;
 
     /**
-     * @var \User
+     * @var User
      *
-     * @ManyToOne(targetEntity="User")
+     * @ManyToOne(targetEntity="User", cascade="persist")
      * @JoinColumns({
      *   @JoinColumn(name="idUser", referencedColumnName="idUser")
      * })
      */
-    private $iduser;
+    private $user;
 
+    /**
+     * @return int
+     */
+    public function getIdpatient()
+    {
+        return $this->idpatient;
+    }
 
+    /**
+     * @param int $idpatient
+     */
+    public function setIdpatient($idpatient)
+    {
+        $this->idpatient = $idpatient;
+    }
 
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
 
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
 
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
 
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
 
+    /**
+     * @return \DateTime
+     */
+    public function getDatedenaissance()
+    {
+        return $this->datedenaissance;
+    }
 
+    /**
+     * @param \DateTime $datedenaissance
+     */
+    public function setDatedenaissance($datedenaissance)
+    {
+        $this->datedenaissance = $datedenaissance;
+    }
 
+    /**
+     * @return string
+     */
+    public function getNumtel()
+    {
+        return $this->numtel;
+    }
 
+    /**
+     * @param string $numtel
+     */
+    public function setNumtel($numtel)
+    {
+        $this->numtel = $numtel;
+    }
 
-    public static function getAll(){
-        $patientRepo = Config::getInstance()->getEntityManager()->getRepository(R::Patient);
-        return $patientRepo->findAll();
+    /**
+     * @return string
+     */
+    public function getNss()
+    {
+        return $this->nss;
+    }
+
+    /**
+     * @param string $nss
+     */
+    public function setNss($nss)
+    {
+        $this->nss = $nss;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    public static function getAll($size = null, $offset = null){
+        $patientRepo = Config::getInstance()->getEntityManager()->getRepository(R::PATIENT);
+        return $patientRepo->findBy(array(), array(), $size, $offset);
     }
 
     public function getLettre(){

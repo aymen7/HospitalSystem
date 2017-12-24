@@ -1,6 +1,7 @@
 <?php
 namespace app\models;
 use app\Config;
+use app\R;
 use app\table\MedecinTable;
 use app\table\PatientTable;
 use app\table\UserTable;
@@ -66,7 +67,7 @@ abstract class User
     /**
      * @var Specialite
      *
-     * @ManyToOne(targetEntity="Specialite")
+     * @ManyToOne(targetEntity="Specialite", fetch="EAGER")
      * @JoinColumns({
      *   @JoinColumn(name="idSpecialite", referencedColumnName="idSpecialite")
      * })
@@ -76,7 +77,7 @@ abstract class User
     /**
      * @var Grade
      *
-     * @ManyToOne(targetEntity="Grade")
+     * @ManyToOne(targetEntity="Grade", cascade={"persist"})
      * @JoinColumns({
      *   @JoinColumn(name="idGrade", referencedColumnName="idGrade")
      * })
@@ -241,11 +242,14 @@ abstract class User
     {
         if (!isset($username) || !isset($password))
             return false;
-        $userTable = new UserTable(Config::getInstance()->getDatabase());
-        $user = $userTable->getUser($username);
+
+        $userRepo = Config::getInstance()->getEntityManager()->getRepository(R::USER);
+        $user = $userRepo->findOneBy(array('username' => $username));
+
         if (is_null($user))
             return false;
-        if ($password == $user->getPassword()){
+
+        if (password_verify($password, $user->getPassword())){
             $_SESSION['user'] = serialize($user);
             return true;
         }
@@ -256,12 +260,23 @@ abstract class User
      * @return array
      */
     public static function getSuggestions($name){
-        $medTable = new MedecinTable(Config::getInstance()->getDatabase());
-        $patientTable = new PatientTable(Config::getInstance()->getDatabase());
-        $patients = $patientTable->findByName($name);
-        $medecins = $medTable->findByName($name);
+        $em = Config::getInstance()->getEntityManager();
+        $query = $em->createQuery("SELECT m FROM " . R::MEDECIN . " m WHERE m.nom LIKE '%$name%' 
+        OR m.prenom LIKE '%$name%' OR CONCAT(CONCAT(m.nom, ' '), m.prenom) LIKE '%$name%' 
+        OR CONCAT(CONCAT(m.prenom, ' '), m.nom) LIKE '%$name%'");
+        $medecins = $query->getResult();
+
+        $query = $em->createQuery("SELECT p FROM " . R::PATIENT . " p WHERE p.nom LIKE '%$name%' OR p.prenom LIKE '%$name%' 
+        OR p.nss LIKE '%$name%'");
+        $patients = $query->getResult();
 
         return array_merge($patients, $medecins);
     }
+
+    public function __toString()
+    {
+        return $this->getNom() . " " . $this->getPrenom();
+    }
+
 
 }
