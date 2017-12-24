@@ -30,7 +30,6 @@ $(document).ready(function () {
 
         $doctorsTable = $("#doctors-table");
         if ($doctorsTable.length) {
-
             $doctorsTable.Tabledit({
                 url: 'secretaire.php?user=medecin',
                 deleteButton: true,
@@ -132,10 +131,30 @@ $(document).ready(function () {
                 },
                 columns: {
                     identifier: [0, 'id'],
-                    editable: [[1, 'nom'], [2, 'prenom'], [3, 'numTel'], [4, 'specialite', specilites], [5, 'grade', grades]]
+                    editable: [[1, 'nom'], [2, 'prenom'], [3, 'numTel'], [4, 'specialite', specialites], [5, 'grade', grades]]
                 },
                 onDraw: function () {
                     $('.tabledit-toolbar .btn-group').css('display', 'inline');
+                },
+                onSuccess: function(data, textStatus, jqXHR) {
+                    console.log('onSuccess(data, textStatus, jqXHR)');
+                    console.log(data);
+                    console.log(textStatus);
+                    console.log(jqXHR);
+                },
+                onFail: function(jqXHR, textStatus, errorThrown) {
+                    console.log('onFail(jqXHR, textStatus, errorThrown)');
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                    console.log(errorThrown);
+                },
+                onAlways: function() {
+                    console.log('onAlways()');
+                },
+                onAjax: function(action, serialize) {
+                    console.log('onAjax(action, serialize)');
+                    console.log(action);
+                    console.log(serialize);
                 }
             });
         }

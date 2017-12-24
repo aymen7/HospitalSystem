@@ -17,7 +17,7 @@ if (!empty($infirmiers)) {
         <div class="table-users">
             <div class="row" style="margin-bottom: 7px">
                 <div class="col s2 offset-s9">
-                    <a class="btn waves-effect modal-trigger" href="#addDoctorModal">
+                    <a class="btn waves-effect modal-trigger" href="#addInfirmierModal">
                         <i class="fa fa-user-plus"></i>
                         Ajouter Infirmier
                     </a>
@@ -72,10 +72,10 @@ if (!empty($infirmiers)) {
                     </div>
                 </div>
             </div>
-
         </div>
+        <?php require 'addInfirmierModal.php' ?>
     </div>
-    <!-- create javascript 2 variables content all specilites and grades in json format to add it in tabledit in profile.js-->
+    <!-- create javascript 2 variables content all specialites and grades in json format to add it in tabledit in profile.js-->
     <script type="text/javascript">
         var specialites, grades;
         specialites = '<?php echo \app\models\Specialite::getAllinJson(\app\models\Specialite::INFIRMIER) ?>';

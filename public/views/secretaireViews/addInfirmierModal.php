@@ -2,16 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: Yacine
- * Date: 08/12/2017
- * Time: 23:29
+ * Date: 24/12/2017
+ * Time: 10:16
  */
+
 ?>
 <!-- Modal Structure -->
-<div id="addDoctorModal" class="modal modal-fixed-footer">
-    <form method="POST" action="?user=medecin">
+<div id="addInfirmierModal" class="modal modal-fixed-footer">
+    <form method="POST" action="?user=infirmier">
         <input type="hidden" name="action" value="edit">
         <div class="modal-content">
-            <h4>Ajouter un nouveau médecin</h4>
+            <h4>Ajouter un nouveau infirmier</h4>
             <div class="row">
                 <div class="col s6 input-field">
                     <label for="nom">Nom</label>
@@ -43,7 +44,7 @@
                     <select class="form-control" id="grade" name="grade">
                         <option disabled selected>Grade</option>
                         <?php
-                        foreach (\app\models\Grade::getAll(\app\models\Grade::MEDECIN) as $grade) {
+                        foreach (\app\models\Grade::getAll(\app\models\Grade::INFIRMIER) as $grade) {
                             /**
                              * @var $grade \app\models\Grade
                              */
@@ -56,7 +57,7 @@
                     <select class="form-control" id="specialite" name="specialite">
                         <option disabled selected>Spécialité</option>
                         <?php
-                        foreach (\app\models\Specialite::getAll(\app\models\Specialite::MEDECIN) as $specialite) {
+                        foreach (\app\models\Specialite::getAll(\app\models\Specialite::INFIRMIER) as $specialite) {
                             /**
                              * @var $specialite \app\models\Specialite
                              */
@@ -78,3 +79,4 @@
         $('.modal select').material_select();
     })
 </script>
+

@@ -31,7 +31,13 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
     }
 
     if (isset($_GET['user']) && $_GET['user'] == 'medecin') {
-        /*-------------------------Medecin----------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*-----------------------------Medecin----------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
         if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])) {
             $id = $_POST['id'];
             $medecin = $entityManger->find(\app\R::MEDECIN, $id);
@@ -72,9 +78,15 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
             $entityManger->flush();
             header('Location: index.php');
         }
-        /*-------------------------------------------------------------------------------*/
     } elseif (isset($_GET['user']) && $_GET['user'] == 'patient') {
-        /*--------------------------Patient -------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------Patient ----------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+
         if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])) {
             $id = $_POST['id'];
             $patient = $entityManger->find(\app\R::PATIENT, $id);
@@ -110,8 +122,57 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
 
             $entityManger->merge($patient);
             $entityManger->flush();
+            header('Location: index.php?ajax=patientsTable');
+        }
+    } elseif (isset($_GET['user']) && $_GET['user'] == 'infirmier') {
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*------------------------------Infirmier------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+        /*----------------------------------------------------------------------------*/
+
+        if (isset($_POST['action']) && $_POST['action'] == 'delete' && isset($_POST['id'])) {
+            $id = $_POST['id'];
+            $infirmier = $entityManger->find(\app\R::INFIRMIER, $id);
+            $entityManger->remove($infirmier);
+            $entityManger->flush();
+            die();
+        } elseif (isset($_POST['action']) && $_POST['action'] == 'edit' && isset($_POST['nom'])
+            && isset($_POST['prenom']) && isset($_POST['numTel']) && isset($_POST['specialite']) && isset($_POST['grade'])) {
+            //Create or update Medecin
+            $infirmier = new \app\models\Infirmier();
+            if (isset($_POST['id'])) {
+                $infirmier = $entityManger->find(\app\R::INFIRMIER, $_POST['id']);
+            } else {
+                $infirmierRepo = $entityManger->getRepository(\app\R::INFIRMIER);
+                $inf = $infirmierRepo->findOneBy(array("username" => $_POST['username']));
+                if (!empty($inf))//username exist déja
+                    header('Location: index.php');
+            }
+
+            if (isset($_POST['username']))
+                $infirmier->setUsername($_POST['username']);
+            if (isset($_POST['password'])) {
+                $hashed = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $infirmier->setPassword($hashed);
+            }
+            $infirmier->setNom($_POST['nom']);
+            $infirmier->setPrenom($_POST['prenom']);
+            $infirmier->setNumTel($_POST['numTel']);
+
+            $grade = $entityManger->find(\app\R::GRADE, $_POST['grade']);
+            $infirmier->setGrade($grade);
+
+            $specialite = $entityManger->find(\app\R::SPECIALITE, $_POST['specialite']);
+            $infirmier->setSpecialite($specialite);
+
+            $entityManger->merge($infirmier);
+            $entityManger->flush();
             header('Location: index.php');
         }
+        /*-------------------------------------------------------------------------------*/
     }
 
 

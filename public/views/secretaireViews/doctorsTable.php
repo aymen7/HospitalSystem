@@ -76,7 +76,7 @@ if (!empty($medecins)) {
         </div>
         <?php require "addDoctorModal.php" ?>
     </div>
-    <!-- create javascript 2 variables content all specilites and grades in json format to add it in tabledit in profile.js-->
+    <!-- create javascript 2 variables content all specialites and grades in json format to add it in tabledit in profile.js-->
     <script type="text/javascript">
         var specialites, grades;
         specialites = '<?php echo \app\models\Specialite::getAllinJson(\app\models\Specialite::MEDECIN) ?>';
