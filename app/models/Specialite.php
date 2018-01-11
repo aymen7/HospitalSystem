@@ -111,6 +111,12 @@ class Specialite
     {
         $this->type = $type;
     }
+
+    public function __toString()
+    {
+        return $this->specialite;
+    }
+
 }
 
 

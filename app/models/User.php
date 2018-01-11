@@ -67,7 +67,7 @@ abstract class User
     /**
      * @var Specialite
      *
-     * @ManyToOne(targetEntity="Specialite", fetch="EAGER")
+     * @ManyToOne(targetEntity="Specialite", fetch="EAGER", cascade={"persist"})
      * @JoinColumns({
      *   @JoinColumn(name="idSpecialite", referencedColumnName="idSpecialite")
      * })
@@ -77,7 +77,7 @@ abstract class User
     /**
      * @var Grade
      *
-     * @ManyToOne(targetEntity="Grade", cascade={"persist"})
+     * @ManyToOne(targetEntity="Grade", fetch="EAGER", cascade={"persist"})
      * @JoinColumns({
      *   @JoinColumn(name="idGrade", referencedColumnName="idGrade")
      * })

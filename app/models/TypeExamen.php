@@ -35,19 +35,86 @@ class Typeexamen
     /**
      * @var string
      *
-     * @Column(name="resultat", type="string", length=100, nullable=false)
+     * @Column(name="resultat", type="string", length=100, nullable=true)
      */
     private $resultat;
 
     /**
-     * @var \Examen
+     * @var Examen
      *
-     * @ManyToOne(targetEntity="Examen")
+     * @ManyToOne(targetEntity="Examen", inversedBy="typeExamens")
      * @JoinColumns({
      *   @JoinColumn(name="idExamen", referencedColumnName="idExamen")
      * })
      */
-    private $idexamen;
+    private $examen;
+
+    /**
+     * @return int
+     */
+    public function getIdtypeexamen()
+    {
+        return $this->idtypeexamen;
+    }
+
+    /**
+     * @param int $idtypeexamen
+     */
+    public function setIdtypeexamen($idtypeexamen)
+    {
+        $this->idtypeexamen = $idtypeexamen;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAnalyse()
+    {
+        return $this->analyse;
+    }
+
+    /**
+     * @param string $analyse
+     */
+    public function setAnalyse($analyse)
+    {
+        $this->analyse = $analyse;
+    }
+
+    /**
+     * @return string
+     */
+    public function getResultat()
+    {
+        return $this->resultat;
+    }
+
+    /**
+     * @param string $resultat
+     */
+    public function setResultat($resultat)
+    {
+        $this->resultat = $resultat;
+    }
+
+    /**
+     * @return Examen
+     */
+    public function getExamen()
+    {
+        return $this->examen;
+    }
+
+    /**
+     * @param Examen $examen
+     */
+    public function setExamen($examen)
+    {
+        $this->examen = $examen;
+    }
+
+
+
 
 
 }

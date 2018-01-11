@@ -85,6 +85,6 @@ if (!empty($medecins)) {
 
     <?php
 } else {
-    header('HTTP/1.1 500 Internal Server Booboo');
+    header('HTTP/1.1 500 Internal Server');
     die(500);
 }

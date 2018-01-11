@@ -10,6 +10,7 @@ namespace app\models;
 use app\Config;
 use app\R;
 use app\table\PatientTable;
+use Doctrine\Common\Collections\ArrayCollection;
 
 
 /**
@@ -73,6 +74,26 @@ class Patient
      * })
      */
     private $user;
+
+    /**
+     * @OneToMany(targetEntity="Consultation", mappedBy="patient")
+     */
+    private $consultations;
+
+    /**
+     * @OneToMany(targetEntity="Lit", mappedBy="patient")
+     */
+    private $lits;
+
+    /**
+     * Patient constructor.
+     */
+    public function __construct()
+    {
+        $this->consultations = new ArrayCollection();
+        $this->lits = new ArrayCollection();
+    }
+
 
     /**
      * @return int
@@ -198,4 +219,59 @@ class Patient
     public function getAvatar(){
         return 'images/patient.png';
     }
+
+    public function __toString()
+    {
+        return $this->getNom() . " " . $this->getPrenom();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getConsultations()
+    {
+        return $this->consultations;
+    }
+
+    /**
+     * @param mixed $consultations
+     */
+    public function setConsultations($consultations)
+    {
+        $this->consultations = $consultations;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLits()
+    {
+        return $this->lits;
+    }
+
+    /**
+     * @param mixed $lits
+     */
+    public function setLits($lits)
+    {
+        $this->lits = $lits;
+    }
+
+
+    /**
+     * @return String this object in json
+     */
+    public function toJson(){
+        $tab = [];
+        $tab['idPatient'] = $this->idpatient;
+        $tab['nom'] = $this->nom;
+        $tab['prenom'] = $this->prenom;
+        $tab['dateDeNaissance'] = $this->datedenaissance->format('d/m/Y');
+        $tab['nss'] = $this->nss;
+
+        return json_encode($tab);
+    }
+
+
+
 }

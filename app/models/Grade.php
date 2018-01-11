@@ -112,5 +112,12 @@ class Grade
     {
         $this->type = $type;
     }
+
+    public function __toString()
+    {
+        return $this->getGrade();
+    }
+
+
 }
 

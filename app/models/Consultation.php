@@ -5,7 +5,10 @@
  * Date: 01/11/2017
  * Time: 23:35
  */
+
 namespace app\models;
+
+use Doctrine\Common\Collections\ArrayCollection;
 
 
 /**
@@ -40,24 +43,152 @@ class Consultation
     private $rapport;
 
     /**
-     * @var \Patient
+     * @var Patient
      *
-     * @ManyToOne(targetEntity="Patient")
+     * @ManyToOne(targetEntity="Patient", inversedBy="consultations")
      * @JoinColumns({
      *   @JoinColumn(name="idPatient", referencedColumnName="idPatient")
      * })
      */
-    private $idpatient;
+    private $patient;
 
     /**
-     * @var \User
+     * @var User
      *
-     * @ManyToOne(targetEntity="User")
+     * @ManyToOne(targetEntity="User", cascade={"persist"})
      * @JoinColumns({
      *   @JoinColumn(name="idUser", referencedColumnName="idUser")
      * })
      */
-    private $iduser;
+    private $medecin;
+
+
+    /**
+     * @var Ordonnance
+     * @OneToOne(targetEntity="Ordonnance", mappedBy="consultation", cascade={"persist"})
+     */
+    private $ordonnance;
+
+
+    /**
+     * @var Examen
+     * @OneToOne(targetEntity="Examen", mappedBy="consultation", cascade={"persist"})
+     */
+    private $examen;
+
+    /**
+     * @return Examen
+     */
+    public function getExamen()
+    {
+        return $this->examen;
+    }
+
+    /**
+     * @param Examen $examen
+     */
+    public function setExamen($examen)
+    {
+        $this->examen = $examen;
+    }
+
+
+    /**
+     * @return int
+     */
+    public function getIdconsultation()
+    {
+        return $this->idconsultation;
+    }
+
+    /**
+     * @param int $idconsultation
+     */
+    public function setIdconsultation($idconsultation)
+    {
+        $this->idconsultation = $idconsultation;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @return Ordonnance
+     */
+    public function getOrdonnance()
+    {
+        return $this->ordonnance;
+    }
+
+    /**
+     * @param Ordonnance $ordonnance
+     */
+    public function setOrdonnance($ordonnance)
+    {
+        $this->ordonnance = $ordonnance;
+    }
+
+
+    /**
+     * @param \DateTime $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRapport()
+    {
+        return $this->rapport;
+    }
+
+    /**
+     * @param string $rapport
+     */
+    public function setRapport($rapport)
+    {
+        $this->rapport = $rapport;
+    }
+
+    /**
+     * @return Patient
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
+
+    /**
+     * @param Patient $patient
+     */
+    public function setPatient($patient)
+    {
+        $this->patient = $patient;
+    }
+
+    /**
+     * @return User
+     */
+    public function getMedecin()
+    {
+        return $this->medecin;
+    }
+
+    /**
+     * @param User $medecin
+     */
+    public function setMedecin($medecin)
+    {
+        $this->medecin = $medecin;
+    }
 
 
 }

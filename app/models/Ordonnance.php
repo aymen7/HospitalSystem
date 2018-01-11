@@ -5,7 +5,10 @@
  * Date: 01/11/2017
  * Time: 23:49
  */
+
 namespace app\models;
+
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Ordonnance
@@ -25,35 +28,75 @@ class Ordonnance
     private $idordonnance;
 
     /**
-     * @var string
+     * @var Consultation
      *
-     * @Column(name="medicament", type="string", length=40, nullable=false)
-     */
-    private $medicament;
-
-    /**
-     * @var boolean
-     *
-     * @Column(name="quantite", type="boolean", nullable=false)
-     */
-    private $quantite;
-
-    /**
-     * @var string
-     *
-     * @Column(name="remarque", type="string", length=200, nullable=false)
-     */
-    private $remarque;
-
-    /**
-     * @var \Consultation
-     *
-     * @ManyToOne(targetEntity="Consultation")
+     * @OneToOne(targetEntity="Consultation", inversedBy="ordonnance", cascade={"persist"})
      * @JoinColumns({
      *   @JoinColumn(name="idConsultation", referencedColumnName="idConsultation")
      * })
      */
-    private $idconsultation;
+    private $consultation;
+
+    /**
+     * @var ArrayCollection
+     *
+     * @OneToMany(targetEntity="LigneOrdonnance", mappedBy="ordonnance", cascade={"persist"})
+     */
+    private $lignesOrdonnances;
+
+
+    public function __construct()
+    {
+        $this->lignesOrdonnances = new ArrayCollection();
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdordonnance()
+    {
+        return $this->idordonnance;
+    }
+
+    /**
+     * @param int $idordonnance
+     */
+    public function setIdordonnance($idordonnance)
+    {
+        $this->idordonnance = $idordonnance;
+    }
+
+    /**
+     * @return Consultation
+     */
+    public function getConsultation()
+    {
+        return $this->consultation;
+    }
+
+    /**
+     * @param Consultation $consultation
+     */
+    public function setConsultation($consultation)
+    {
+        $this->consultation = $consultation;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getLignesOrdonnances()
+    {
+        return $this->lignesOrdonnances;
+    }
+
+    /**
+     * @param mixed $lignesOrdonnances
+     */
+    public function setLignesOrdonnances($lignesOrdonnances)
+    {
+        $this->lignesOrdonnances = $lignesOrdonnances;
+    }
 
 
 }

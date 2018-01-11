@@ -17,5 +17,7 @@ class R
     const SPECIALITE = "app\\models\\Specialite";
     const USER = "app\\models\\User";
     const INFIRMIER = "app\\models\\Infirmier";
+    const CHAMBRE = "app\\models\\Chambre";
+    const CONSULTATION = "app\\models\\Consultation";
 
 }

@@ -24,7 +24,20 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
         //ajax call for next and previous infirmiers table
         require 'views/secretaireViews/infirmiersTable.php';
         die();
-    } elseif (isset($_GET['ajax']) && $_GET['ajax'] == 'searchSugesstions' && isset($_GET['name'])) {
+    } else if (isset($_GET['ajax']) && $_GET['ajax'] == 'chambresTable') {
+        //ajax call for next and previous infirmiers table
+        require 'views/secretaireViews/chambresTable.php';
+        die();
+    } else if (isset($_GET['ajax']) && $_GET['ajax'] == 'detailsChambre' && isset($_GET['chambre'])) {
+        //ajax call for next and previous infirmiers table
+        require 'views/secretaireViews/detailsChambre.php';
+        die();
+    } else if (isset($_GET['ajax']) && $_GET['ajax'] == 'detailsPatient' && isset($_GET['id'])) {
+        //ajax call for next and previous infirmiers table
+        require 'views/secretaireViews/detailsPatient.php';
+        die();
+    }
+    elseif (isset($_GET['ajax']) && $_GET['ajax'] == 'searchSugesstions' && isset($_GET['name'])) {
         //redirect ajax query to searchSugesstions.php
         require 'ajax/searchSugesstions.php';
         die();

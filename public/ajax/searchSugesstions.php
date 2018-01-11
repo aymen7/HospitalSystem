@@ -12,6 +12,13 @@ if (isset($_GET['name'])) {
         foreach ($resultat as $ligne) {
             ?>
             <div class="row">
+                <?php
+                if ($ligne instanceof \app\models\Patient){
+                    echo "<a class='detailsPatient' href='?ajax=detailsPatient&id={$ligne->getIdpatient()}' data-info='{$ligne->toJson()}'>";
+                }
+                else
+                    echo "<a>";
+                ?>
                 <div class="col s2">
                     <div class="letter">
                         <img src="<?= $ligne->getAvatar() ?>" class="responsive-img">
@@ -27,6 +34,7 @@ if (isset($_GET['name'])) {
                         </h6>
                     </div>
                 </div>
+                </a>
             </div>
             <?php
         }

@@ -23,25 +23,83 @@
     body {
         font-family: 'Khula', sans-serif;
         background-color: rgba(241, 241, 241, .9);
+        overflow-x: hidden;
+        padding-top: 110px;
     }
-    .text-center{
+
+    .background {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: url("../images/background2.jpg");
+        background-size: 100%;
+        z-index: -2;
+    }
+
+    .background-cover{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #000;
+        opacity: 0.4;
+        z-index: -1;
+    }
+
+    .text-center {
         text-align: center;
+    }
+
+    input:not([type]):disabled, input:not([type])[readonly="readonly"],
+    input[type="text"]:not(.browser-default):disabled,
+    input[type="text"]:not(.browser-default)[readonly="readonly"],
+    input[type="password"]:not(.browser-default):disabled,
+    input[type="password"]:not(.browser-default)[readonly="readonly"],
+    input[type="email"]:not(.browser-default):disabled,
+    input[type="email"]:not(.browser-default)[readonly="readonly"],
+    input[type="url"]:not(.browser-default):disabled,
+    input[type="url"]:not(.browser-default)[readonly="readonly"],
+    input[type="time"]:not(.browser-default):disabled,
+    input[type="time"]:not(.browser-default)[readonly="readonly"],
+    input[type="date"]:not(.browser-default):disabled,
+    input[type="date"]:not(.browser-default)[readonly="readonly"],
+    input[type="datetime"]:not(.browser-default):disabled,
+    input[type="datetime"]:not(.browser-default)[readonly="readonly"],
+    input[type="datetime-local"]:not(.browser-default):disabled,
+    input[type="datetime-local"]:not(.browser-default)[readonly="readonly"],
+    input[type="tel"]:not(.browser-default):disabled,
+    input[type="tel"]:not(.browser-default)[readonly="readonly"],
+    input[type="number"]:not(.browser-default):disabled,
+    input[type="number"]:not(.browser-default)[readonly="readonly"],
+    input[type="search"]:not(.browser-default):disabled,
+    input[type="search"]:not(.browser-default)[readonly="readonly"],
+    textarea.materialize-textarea:disabled, textarea.materialize-textarea[readonly="readonly"] {
+        color: #444;
     }
 
     /*---- header ------------------------------------------*/
     header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 77px;
         color: rgba(255, 255, 255, 1);
         background: #2856B6;
         -moz-box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .3);
         -webkit-box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .3);
         box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .3);
+        z-index: 2000;
     }
 
-    #search-wraper, #search-wraper .input-field{
+    #search-wraper, #search-wraper .input-field {
         margin-top: -10px;
     }
 
-    #search-wraper input{
+    #search-wraper input {
         margin-bottom: 0;
     }
 
@@ -57,17 +115,6 @@
 
     }
 
- /*   #search-wraper .form-control {
-        width: 95%;
-        margin-right: 0;
-        margin-left: 0;
-        display: inline;
-        border-radius: 0 !important;
-        border-style: none;
-        background-color: rgba(255, 255, 255, .3) !important;
-        color: white;
-    }
-*/
     #search-wraper .form-control::placeholder {
         color: white;
         opacity: .8 !important;
@@ -119,12 +166,18 @@
         margin-right: 0;
         margin-left: 0;
         margin-bottom: 0;
-        padding: 20px;
+        padding: 20px 20px 0;
         -webkit-transition: all 500ms;
         -moz-transition: all 500ms;
         -ms-transition: all 500ms;
         -o-transition: all 500ms;
         transition: all 500ms;
+    }
+
+    .search-suggestions a {
+        color: #000;
+        display: inline-block;
+        width: 100%;
     }
 
     .search-suggestions .row:hover {
@@ -135,6 +188,15 @@
 
     .search-suggestions .nom {
         margin-top: 3%;
+    }
+
+    .search-suggestions .loader {
+        text-align: center;
+    }
+
+    .search-suggestions svg path,
+    .search-suggestions svg rect {
+        fill: #0769AD;
     }
 
     /*------------main content*-------------------------------*/
@@ -150,7 +212,7 @@
         margin-right: 1%;
     }
 
-    .stat a{
+    .stat a {
         color: #FFF;
     }
 
@@ -210,25 +272,34 @@
     .number {
         font-size: 56px;
     }
+
     /*----------------*/
     /*----doctors table----*/
-    table.striped > tbody > tr:nth-child(2n+1){
-        background-color: #FFF;
+    table.striped > tbody > tr:nth-child(2n+1) {
+        background-color: #DDD;
     }
-    table .tabledit-input{
+
+    table .tabledit-input {
         margin: 0;
     }
-    table thead{
+
+    table thead {
         background-color: #3c3c3c;
         color: #FFF;
     }
+
     /*--------------------*/
     #main-wrapper {
         padding-top: 10px;
     }
 
     #table-wrapper {
-        padding-left: 0;
+        padding: 20px;
+        background: #FFF;
+    }
+
+    #table-wrapper h2{
+        margin: 0;
     }
 
     #table-wrapper .table-responsive .table {
@@ -238,6 +309,7 @@
     #table-wrapper .table tr:hover {
         cursor: pointer;
     }
+
     .control-btn-wrapper .control-btn {
         border-radius: 0;
         padding: 10px;
@@ -263,6 +335,14 @@
     aside {
         padding: 20px 10px;
         height: 600px;
+        background: #FFF;
+    }
+
+    #sidebar {
+        height: 100%;
+        position: fixed;
+        top: 77px;
+        bottom: 0;
     }
 
     #header-wrapper {
@@ -311,15 +391,15 @@
     }
 
     #item-header2 h6 {
-        color: rgb(255, 86, 82);
+        color: #039be5
     }
 
     #item-header3 h6 {
-        color: rgb(255, 193, 7);
+        color: #039be5
     }
 
     #item-header4 h6 {
-        color: rgb(213, 89, 234);
+        color: #039be5
     }
 
     .item-header:hover {
@@ -344,7 +424,7 @@
     }
 
     .item-body h6 a {
-        color: rgba(0, 0, 0, .5) !important;
+        color: #000; !important;
         text-decoration: none;
     }
 
@@ -352,6 +432,189 @@
         color: rgba(40, 86, 182, 1);
     }
 
+    /* Start Détails Chambre */
+    .detailsChambre .detailsLit {
+        margin-top: 20px;
+        font-size: 21px;
+        background-color: #FFFFFF;
+        line-height: 1.6;
+    }
+
+    /* End Détails Chambre */
+    /*Start Détails Patient*/
+    .detailsPatient .z-depth-2 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: #FFF;
+    }
+
+    .detailsPatient .card-content {
+        display: inline-block;
+    }
+
+    /*End Détails Patient*/
+    /*Start ordonnance*/
+    .ordonnance {
+        background: #FFF;
+        padding-left: 20px;
+        padding-top: 1px;
+        overflow: hidden;
+    }
+
+    .ordonnance .deleteLigneOrdonnance {
+        line-height: 60px;
+        cursor: pointer;
+        -webkit-transition: all 500ms;
+        -moz-transition: all 500ms;
+        -ms-transition: all 500ms;
+        -o-transition: all 500ms;
+        transition: all 500ms;
+        color: #666;
+    }
+
+    .ordonnance .deleteLigneOrdonnance:hover {
+        color: red;
+    }
+
+    .ordonnance .buttons {
+        text-align: right;
+    }
+
+    .ordonnance #ajouterExamen {
+        margin-bottom: 30px;
+    }
+
+    /*End ordonnance*/
+    /*Start Main Medecin */
+    .medecinMain .mesConsultations, .medecinMain .mesPatients {
+        background-color: #FFF;
+        padding: 20px;
+    }
+
+    .medecinMain .mesConsultations .head, .medecinMain .mesPatients .head {
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .medecinMain .mesConsultations .ligne, .medecinMain .mesPatients .ligne {
+        padding: 10px;
+    }
+
+    .medecinMain .mesConsultations .ligne:nth-child(2n +1), .medecinMain .mesPatients .ligne:nth-child(2n+1) {
+        background-color: #ecf0f1;
+    }
+
+    .medecinMain .mesConsultations .row, .medecinMain .mesPatients .row {
+        margin-bottom: 0;
+    }
+
+    .medecinMain .mesConsultations h3, .medecinMain .mesPatients h3 {
+        margin-top: 0;
+    }
+
+    .medecinMain .mesConsultations .ligne a, .medecinMain .mesPatients .ligne a {
+        color: #000;
+        display: flex;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        -ms-transition: all 1s;
+        -o-transition: all 1s;
+        transition: all 1s;
+    }
+
+    .medecinMain .mesConsultations .ligne a:hover, .medecinMain .mesPatients .ligne a:hover {
+        font-weight: bold;
+    }
+
+    .medecinMain .mesConsultations .btn, .medecinMain .mesPatients .btn {
+        margin-top: 15px;
+    }
+
+    /*End Main Medecin */
+    /*--------------------------------------------------------*/
+    /*Start Details Consultation*/
+    .detailsConsultation .detailsPatient, .detailsConsultation .detailsMedecin,
+    .detailsConsultation .detailsOrdonnance, .detailsConsultation .detailsExamen {
+        background-color: #FFF;
+        padding: 20px;
+    }
+
+    .detailsConsultation h3 {
+        margin-top: 0;
+    }
+
+    .detailsConsultation .detailsOrdonnance .ligne,
+    .detailsConsultation .detailsExamen .ligne {
+        padding: 7px 0;
+        margin-bottom: 5px;
+    }
+
+    .detailsConsultation .detailsOrdonnance .ligne:nth-child(2n+1),
+    .detailsConsultation .detailsExamen .ligne:nth-child(2n+1) {
+        background-color: #ecf0f1;
+    }
+
+    /*End Details Consultation*/
+    /*Start détails Patient*/
+    .detailsPatient .detailsConsultations .consultation,
+    .detailsPatient .detailsHospitalisation .hospitalisation {
+        margin-bottom: 5px;
+        padding: 7px 0;
+    }
+
+    .detailsPatient .detailsConsultations .row:nth-child(2n+1),
+    .detailsPatient .detailsHospitalisation .row:nth-child(2n+1) {
+        background-color: #ecf0f1;
+
+    }
+
+    .detailsPatient .detailsConsultations .row a {
+        color: #000;
+        display: flex;
+        -webkit-transition: all 800ms;
+        -moz-transition: all 800ms;
+        -ms-transition: all 800ms;
+        -o-transition: all 800ms;
+        transition: linear 800ms;
+    }
+
+    .detailsPatient .detailsConsultations .row a:hover {
+        font-weight: bold;
+    }
+
+    /*End détails Patient*/
+    /*Start tt mes consultations & tt mes patients*/
+    .ttMesConsultations, .ttMesPatients {
+        background-color: #FFF;
+        padding: 20px;
+    }
+
+    .ttMesConsultations .consultation a, .ttMesPatients .patient a {
+        display: flex;
+        color: #000;
+    }
+
+    .ttMesConsultations .consultation a:hover, .ttMesPatients .patient a:hover {
+        font-weight: bold;
+    }
+
+    .ttMesConsultations .row, .ttMesPatients .row {
+        margin-bottom: 7px;
+    }
+
+    .ttMesConsultations .consultation, .ttMesPatients .patient {
+        padding: 7px 0;
+    }
+
+    .ttMesConsultations .consultation:nth-child(2n+1), .ttMesPatients .patient:nth-child(2n+1) {
+        background-color: #ecf0f1;
+    }
+
+    /*End tt mes consultations*/
+
+    .detailsLit {
+        padding: 20px !important;
+    }
 }
 
 /*end of the laptop desktop design*/

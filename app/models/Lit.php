@@ -40,24 +40,106 @@ class Lit
     private $datefin;
 
     /**
-     * @var \Chambre
+     * @var Chambre
      *
-     * @ManyToOne(targetEntity="Chambre")
+     * @ManyToOne(targetEntity="Chambre", inversedBy="lits")
      * @JoinColumns({
      *   @JoinColumn(name="idChambre", referencedColumnName="idChambre")
      * })
      */
-    private $idchambre;
+    private $chambre;
 
     /**
-     * @var \Patient
+     * @var Patient
      *
-     * @ManyToOne(targetEntity="Patient")
+     * @ManyToOne(targetEntity="Patient", inversedBy="lits")
      * @JoinColumns({
      *   @JoinColumn(name="idPatient", referencedColumnName="idPatient")
      * })
      */
-    private $idpatient;
+    private $patient;
+
+    /**
+     * @return int
+     */
+    public function getIdlit()
+    {
+        return $this->idlit;
+    }
+
+    /**
+     * @param int $idlit
+     */
+    public function setIdlit($idlit)
+    {
+        $this->idlit = $idlit;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDatedebut()
+    {
+        return $this->datedebut;
+    }
+
+    /**
+     * @param \DateTime $datedebut
+     */
+    public function setDatedebut($datedebut)
+    {
+        $this->datedebut = $datedebut;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDatefin()
+    {
+        return $this->datefin;
+    }
+
+    /**
+     * @param \DateTime $datefin
+     */
+    public function setDatefin($datefin)
+    {
+        $this->datefin = $datefin;
+    }
+
+    /**
+     * @return Chambre
+     */
+    public function getChambre()
+    {
+        return $this->chambre;
+    }
+
+    /**
+     * @param Chambre $chambre
+     */
+    public function setChambre($chambre)
+    {
+        $this->chambre = $chambre;
+    }
+
+    /**
+     * @return Patient
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
+
+    /**
+     * @param Patient $patient
+     */
+    public function setPatient($patient)
+    {
+        $this->patient = $patient;
+    }
+
+
 
 
 }
