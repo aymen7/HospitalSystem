@@ -6,7 +6,7 @@
  * Time: 23:51
  */
 
-include "../template/head.php";
+include "views/template/head.php";
 
 
 include 'views/secretaireViews/profileHeader.php'; ?>
@@ -23,4 +23,4 @@ include 'views/secretaireViews/profileHeader.php'; ?>
 
 <?php
 
-include "../template/footer.php";
+include "views/template/footer.php";

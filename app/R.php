@@ -19,5 +19,7 @@ class R
     const INFIRMIER = "app\\models\\Infirmier";
     const CHAMBRE = "app\\models\\Chambre";
     const CONSULTATION = "app\\models\\Consultation";
+    const LIT = "app\\models\\Lit";
+    const ORDONNANCE = "app\\models\\Ordonnance";
 
 }

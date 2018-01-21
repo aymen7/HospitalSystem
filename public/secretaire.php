@@ -136,6 +136,40 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
             $entityManger->merge($patient);
             $entityManger->flush();
             header('Location: index.php?ajax=patientsTable');
+        } elseif (isset($_GET['action']) && $_GET['action'] == 'ajouterHospitalisation' && isset($_POST['idPatient'])
+        && isset($_POST['chambre']) && isset($_POST['dureeHospitalisation'])){
+
+            $lit = new \app\models\Lit();
+            $patient = $entityManger->find(\app\R::PATIENT, $_POST['idPatient']);
+            $lit->setPatient($patient);
+            $chambre = $entityManger->find(\app\R::CHAMBRE, $_POST['chambre']);
+            $lit->setChambre($chambre);
+
+            $duree = $_POST['dureeHospitalisation'];
+            $duree = explode(' ', $duree);
+            $dateDebut =  DateTime::createFromFormat('d/m/Y', $duree[0]);
+            $dateFin =  DateTime::createFromFormat('d/m/Y', end($duree));
+
+            $lit->setDatedebut($dateDebut);
+            $lit->setDatefin($dateFin);
+
+            $entityManger->persist($lit);
+            $entityManger->flush();
+
+            header('Location: index.php');
+        } elseif (isset($_GET['action']) && $_GET['action'] == "modifierHospitalisation" && isset($_POST['idLit'])
+        && isset($_POST['dureeHospitalisation'])){
+            $lit = $entityManger->find(\app\R::LIT, $_POST['idLit']);
+
+            $duree = $_POST['dureeHospitalisation'];
+            $duree = explode(' ', $duree);
+            $dateDebut =  DateTime::createFromFormat('d/m/Y', $duree[0]);
+            $dateFin =  DateTime::createFromFormat('d/m/Y', end($duree));
+
+            $lit->setDatedebut($dateDebut);
+            $lit->setDatefin($dateFin);
+
+            $entityManger->flush();
         }
     } elseif (isset($_GET['user']) && $_GET['user'] == 'infirmier') {
         /*----------------------------------------------------------------------------*/
@@ -186,8 +220,17 @@ if (isset($_SESSION['user']) && unserialize($_SESSION['user']) instanceof \app\m
             header('Location: index.php');
         }
         /*-------------------------------------------------------------------------------*/
-    }
+    } elseif (isset($_GET['user']) && $_GET['user'] == 'secretaire'){
+        if (isset($_GET['action']) && $_GET['action'] == "addChambre" && isset($_POST['numero'])
+            && isset($_POST['nombreLit'])){
+            $chambre = new \app\models\Chambre();
+            $chambre->setNumero($_POST['numero']);
+            $chambre->setNombrelits($_POST['nombreLit']);
 
+            $entityManger->persist($chambre);
+            $entityManger->flush();
+        }
+    }
 
     require 'views/secretaireViews/index.php';
 } else {

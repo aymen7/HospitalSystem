@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="col l1" id="logOut-wraper">
-            <a class="dropdown-button btn btn-flat white-text" data-activates='dropdown1' href="#">
+            <a class="dropdown-button waves-effect waves-teal btn-flat white-text" data-activates='dropdown1' href="#">
                 <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
             </a>
             <ul id="dropdown1" class="dropdown-content">

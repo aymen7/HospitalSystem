@@ -222,6 +222,7 @@ $(document).ready(function () {
         event.preventDefault();
         url = $(this).attr('href');
         jsonData = $(this).data('info');
+        console.log(jsonData);
         $.ajax(url).done(function (data) {
             $ordonnanceForm = $('#ordonnanceForm');
             if ($ordonnanceForm.length){

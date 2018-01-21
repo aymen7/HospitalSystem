@@ -6,7 +6,7 @@
  * Time: 20:49
  */
 
-include 'template/head.php';
+include 'views/template/head.php';
 
 
 include 'views/secretaireViews/profileHeader.php'; ?>
@@ -67,4 +67,4 @@ include 'views/secretaireViews/profileHeader.php'; ?>
 </section>
 
 <?php
-include 'template/head.php';
+include 'views/template/head.php';

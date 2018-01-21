@@ -120,5 +120,20 @@ class Chambre
         return $chambreRepo->findBy(array(), array(), $size, $offset);
     }
 
+    public function getLitsOccupes(){
+        $lits = $this->getLits();
+        $i = ($lits->count() - 1);
+        for ($i; $i >= 0; $i--){
+            $lit = $lits->get($i);
+            /**
+             * @var $lit Lit
+             */
+            if (!($lit->getDatedebut() < new \DateTime() && $lit->getDatefin() > new \DateTime())){
+                $lits->remove($i);
+            }
+        }
+        return $lits;
+    }
+
 
 }

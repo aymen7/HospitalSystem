@@ -6,7 +6,7 @@
  * Time: 23:51
  */
 
-include "../template/head.php";
+include "views/template/head.php";
 
  include 'views/secretaireViews/profileHeader.php'; ?>
 <section class="container-fluid" id="main-content">
@@ -21,4 +21,4 @@ include "../template/head.php";
 </section>
 
 <?php
-include "../template/footer.php";
+include "views/template/footer.php";

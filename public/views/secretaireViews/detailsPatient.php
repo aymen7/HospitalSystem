@@ -66,34 +66,33 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
                 </div>
                 <div class="col s6">
                     <div class="card col s12 z-depth-2">
-                        <div class="card-content">
-                            <h4><b>Consultations:</b></h4>
-                            <?php
 
-                            foreach ($patient->getConsultations() as $consultation) {
-                                /**
-                                 * @var $consultation \app\models\Consultation
-                                 */
-                                ?>
-                                <div class="col s12">
-                                    <div class="consultation">
-                                        <div class="col s12">
-                                            <b>Date de consultation:</b> <?= $consultation->getDate()->format('d/m/Y'); ?>
-                                        </div>
-                                        <div class="col s12">
-                                            <b>Fait par:</b> <?= $consultation->getMedecin() ?>
-                                        </div>
+                        <h4><b>Consultations:</b></h4>
+                        <?php
+
+                        foreach ($patient->getConsultations() as $consultation) {
+                            /**
+                             * @var $consultation \app\models\Consultation
+                             */
+                            ?>
+                                <div class="consultation row">
+                                    <div class="col s6">
+                                        <b>Date:</b> <?= $consultation->getDate()->format('d/m/Y'); ?>
+                                    </div>
+                                    <div class="col s6">
+                                        <b>Faite par:</b> <?= $consultation->getMedecin() ?>
                                     </div>
                                 </div>
-                                <?php
-                            }
-                            ?>
-                        </div>
+
+                            <?php
+                        }
+                        ?>
+
                     </div>
                 </div>
                 <div class="col s6">
                     <div class="card col s12 z-depth-2">
-                        <div class="card-content">
+                        <div class="card-content col s12">
                             <h4><b>Hospitalisations:</b></h4>
                             <?php
                             foreach ($patient->getLits() as $lit) {
@@ -101,12 +100,12 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
                                  * @var $lit \app\models\Lit
                                  */
                                 ?>
-                                <div class="hospitalisation">
-                                    <div class="col s12">
+                                <div class="hospitalisation row">
+                                    <div class="col s6">
                                         <b>De</b> <?= $lit->getDatedebut()->format('d/m/Y') ?>
                                         <b>à</b> <?= $lit->getDatefin()->format('d/m/Y') ?>
                                     </div>
-                                    <div class="col s12">
+                                    <div class="col s6">
                                         <b>Chambre:</b> <?= $lit->getChambre()->getNumero() ?>
                                     </div>
                                 </div>
@@ -114,13 +113,14 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
                             }
                             ?>
                         </div>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                                    class="material-icons">add</i></a>
+                        <a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger"
+                           href="#addHospitalisationModal"><i class="material-icons">add</i></a>
                     </div>
                 </div>
             </div>
         </div>
         <?php
+        include "addHospitalisationModal.php";
     }
 
 } else {

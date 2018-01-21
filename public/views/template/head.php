@@ -27,6 +27,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!--Import css daterange picker-->
+    <link type="text/css" rel="stylesheet" href="css/daterangepicker.min.css"/>
     <!-- font awesome -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- my style css-->

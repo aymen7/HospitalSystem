@@ -90,8 +90,8 @@ if (isset($_GET['id']) && ctype_digit($_GET['id'])) {
                         <h3>Ordonnance:</h3>
                         <div class="row">
                             <div class="col s4 offset-s8">
-                                <button class="btn waves-effect waves-light"><i class="fa fa-print"></i>Imprimer
-                                </button>
+                                <a href="?page=imprimerOrdonnance&idOrdonnance=<?= $consultation->getOrdonnance()->getIdordonnance()?>" class="btn waves-effect waves-light"><i class="fa fa-print"></i>Imprimer
+                                </a>
                             </div>
                         </div>
                         <div class="row">

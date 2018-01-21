@@ -18,25 +18,25 @@ if ($chambres) {
              * @var $chambre \app\models\Chambre
              */
             ?>
-
             <div class="col s12 m4">
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                         <span class="card-title">Chambre N° <?= $chambre->getNumero() ?></span>
                         <div class="row">
                             <?php
+                            $litOccupes = $chambre->getLitsOccupes();
                             for ($i = 0; $i < $chambre->getNombrelits(); $i++) {
-                                $lit = $chambre->getLits()->get($i);
+                                $lit = $litOccupes->get($i);
                                 /**
                                  * @var $lit \app\models\Lit
                                  */
                                 if ($lit instanceof \app\models\Lit) {
-                                    echo "<div class='col s6' >
+                                    echo "<div class='col s6'>
                                           <i class='fa fa-bed fa-3x red-text text-darken-1 tooltipped' 
                                           data-position='right' data-delay='50' 
                                           data-tooltip='{$lit->getPatient()}'></i></div>";
                                 } else {
-                                    echo "<div class='col s6' >
+                                    echo "<div class='col s6'>
                                           <i class='fa fa-bed fa-3x white-text tooltipped' 
                                           data-position='right' data-delay='50' 
                                           data-tooltip='Libre'></i></div>";
@@ -44,11 +44,15 @@ if ($chambres) {
                             }
                             ?>
                         </div>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">edit</i></a>
                     </div>
                     <div class="card-action">
-                        <a class="buttonDetailsChambre" href="?ajax=detailsChambre&chambre=<?= $chambre->getIdchambre()?>">Détails...</a>
+                        <a class="buttonDetailsChambre"
+                           href="?ajax=detailsChambre&chambre=<?= $chambre->getIdchambre() ?>">Détails...</a>
                     </div>
+                </div>
+                <?php include "addChambreModal.php"; ?>
+                <div class="fixed-action-btn">
+                    <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#addChambreModal"><i class="material-icons">add</i></a>
                 </div>
             </div>
 

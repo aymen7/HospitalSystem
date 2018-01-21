@@ -53,6 +53,10 @@
         text-align: center;
     }
 
+    .date-picker-wrapper{
+        z-index: 1005;
+    }
+
     input:not([type]):disabled, input:not([type])[readonly="readonly"],
     input[type="text"]:not(.browser-default):disabled,
     input[type="text"]:not(.browser-default)[readonly="readonly"],
@@ -92,7 +96,7 @@
         -moz-box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .3);
         -webkit-box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .3);
         box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, .3);
-        z-index: 2000;
+        z-index: 900;
     }
 
     #search-wraper, #search-wraper .input-field {
@@ -200,6 +204,18 @@
     }
 
     /*------------main content*-------------------------------*/
+
+    .detailsPatient .consultation, .detailsPatient .hospitalisation{
+        padding: 5px;
+        margin-bottom: 0 !important;
+    }
+
+    .detailsPatient .card{
+        padding-bottom: 20px;
+    }
+    .detailsPatient .consultation:nth-child(2n+1), .detailsPatient .hospitalisation:nth-child(2n+1){
+        background: #DDD;
+    }
     /*-----main div ----*/
     #main-div {
         padding-top: 10px;
@@ -615,6 +631,6 @@
     .detailsLit {
         padding: 20px !important;
     }
-}
 
+}
 /*end of the laptop desktop design*/
