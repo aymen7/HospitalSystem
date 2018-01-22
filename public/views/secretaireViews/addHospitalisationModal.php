@@ -59,7 +59,6 @@ $patient = \app\Config::getInstance()->getEntityManager()->find(\app\R::PATIENT,
             </div>
         </div>
         <div class="modal-footer">
-            <button class="modal-close waves-effect waves-red btn-flat">Annuler</button>
             <input type="submit" class="modal-action modal-close waves-effect waves-green btn-flat" value="Ajouter">
         </div>
     </form>

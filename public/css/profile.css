@@ -20,6 +20,7 @@
 
 @media (min-width: 1281px) {
     /* hi-res laptops and desktops */
+
     body {
         font-family: 'Khula', sans-serif;
         background-color: rgba(241, 241, 241, .9);
@@ -632,5 +633,8 @@
         padding: 20px !important;
     }
 
+    .date-picker-wrapper{
+        z-index: 2000;
+    }
 }
 /*end of the laptop desktop design*/
